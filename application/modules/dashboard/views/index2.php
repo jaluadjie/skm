@@ -28,6 +28,7 @@ The above copyright notice and this permission notice shall be included in all c
   <link href="<?=base_url('assets/dashboard/css/material-dashboard.css?v=2.1.2');?>" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap5.min.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="<?=base_url('assets/dashboard/demo/demo.css');?>" rel="stylesheet" />
 </head>
@@ -137,7 +138,7 @@ The above copyright notice and this permission notice shall be included in all c
                 </a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="material-icons">notifications</i>
                   <span class="notification">5</span>
                   <p class="d-lg-none d-md-block">

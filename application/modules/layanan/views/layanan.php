@@ -8,7 +8,9 @@
                 </div>
                 <div class="card-body table-reponsive">
                   <!-- <div class="table-responsive"> -->
-                    <button class="btn btn-sm btn-success pull-right" onclick="add_()"><i class="fa fa-plus"></i>  Layanan</button>
+                    <button class="btn btn-sm btn-primary btn-round pull-right" onclick="add_()">
+                      <i class="material-icons">add_circle_outline</i>&nbsp;&nbsp;&nbsp;Layanan
+                    </button>
                     <table class="table table-hover" id="table" style="width: 100%;">
                       <thead class=" text-primary">
                         <th>#</th>
@@ -49,7 +51,7 @@
                         <div class="col-md-10">
                             <div class="form-group">
                               <label class="bmd-label-floating">Perangkat Daerah</label>
-                                <select class="form-control" name="id_satker" id="pilih-opd" style="width: 100%;">
+                                <select class="form-control" name="id_satker" id="pilih-opd">
                                   <option disabled="" selected="">Pilih Nama OPD</option>
                                     <?php foreach($satker as $row):
                                       echo "<option value=".$row->id_satker.">".$row->n_satker." </option>";
@@ -349,6 +351,6 @@ function delete_(id)
     }
 }
 
-// $("#pilih-opd").select2();
+// $("#pilih-opd").selectpicker();
 
 </script>
