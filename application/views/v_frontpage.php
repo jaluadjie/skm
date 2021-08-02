@@ -86,7 +86,7 @@
             <div class="wizard-footer" style="display:none;">
               <div class="text-center">
                 <button type="button" class="btn btn-success btn-wd" id="show-qr">Show QR</button>
-                <button type="button" class="btn btn-success btn-wd" id="show-qr2">Show QR2</button>
+                <!-- <button type="button" class="btn btn-success btn-wd" id="show-qr2">Show QR2</button> -->
                 <a id="menuju-link" href="#"><button type="button" class="btn btn-secondary btn-wd">Menuju Link</button></a>
               </div>
               <div class="clearfix"></div>
@@ -168,37 +168,37 @@
       qrcode = new QRCode(document.getElementById("qrcode"));
       id_satker = $('#pilih-opd').val();
       id_layanan = $('#pilih-layanan').val();
-      var link_qr = "http://192.168.1.6/skm/survey/index/"+id_satker+"/"+id_layanan;
+      var link_qr = "http://192.168.100.3/skm/survey/index/"+id_satker+"/"+id_layanan;
       qrcode.clear(); //clear the code.
       qrcode.makeCode(link_qr);
       $("#qrModal").modal('show');
     });
 
-    $('#show-qr2').click(function(){
-      $('#qrcode').empty();
-      const qrCode = new QRCodeStyling({
-        width: 250,
-        height: 250,
-        type: "svg",
-        data: "https://www.facebook.com/",
-        image: "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg",
-        dotsOptions: {
-            color: "#4267b2",
-            type: "rounded"
-        },
-        backgroundOptions: {
-            color: "#e9ebee",
-        },
-        imageOptions: {
-            crossOrigin: "anonymous",
-            margin: 20
-        }
-    });
+    // $('#show-qr2').click(function(){
+    //   $('#canvas').empty();
+    //   const qrCode = new QRCodeStyling({
+    //     width: 250,
+    //     height: 250,
+    //     type: "svg",
+    //     data: "https://www.facebook.com/",
+    //     image: "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg",
+    //     dotsOptions: {
+    //         color: "#4267b2",
+    //         type: "rounded"
+    //     },
+    //     backgroundOptions: {
+    //         color: "#e9ebee",
+    //     },
+    //     imageOptions: {
+    //         crossOrigin: "anonymous",
+    //         margin: 20
+    //     }
+    // });
 
-    qrCode.append(document.getElementById("canvas"));
-    $("#qrModal").modal('show');
-    //qrCode.download({ name: "qr", extension: "svg" });
-    });
+    // qrCode.append(document.getElementById("canvas"));
+    // $("#qrModal").modal('show');
+    // //qrCode.download({ name: "qr", extension: "svg" });
+    // });
   });
   
 </script>
