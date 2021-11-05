@@ -6,6 +6,9 @@
                 $.ajax({
                     url : "<?php echo site_url('responden/google_chart/jk')?>",
                     dataType : "JSON",
+                    before: function(){
+                        document.getElementById('responden_jk').innerHTML('proses');
+                    },
                     success : function(result) {
                         google.charts.load('current', {
                             'packages' : [ 'corechart' ]
