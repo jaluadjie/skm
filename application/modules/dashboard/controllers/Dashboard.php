@@ -16,7 +16,7 @@ class Dashboard extends CI_Controller {
 		$data['title'] = 'Dashboard';
 		$data['subtitle'] = 'Selamat Datang Admin';
 		$data['jml_responden'] = $this->res_m->count_all();
-		$this->load->view('dashboard2',$data);
+		$this->load->view('dashboard',$data);
 	}
 
 }

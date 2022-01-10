@@ -135,7 +135,7 @@ class Layanan extends CI_Controller {
 			$data['status'] = FALSE;
 		}
 
-		if($this->input->post('s_waktu') == '')
+		if($this->input->post('standar_waktu') == '')
 		{
 			$data['inputerror'][] = 'standar_waktu';
 			$data['error_string'][] = 'Silahkan isi Waktu';

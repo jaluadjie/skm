@@ -17,7 +17,7 @@ class Main extends CI_Controller {
 	{
 		$data['title'] = 'Hai Admin!';
 		//$data['subtitle'] = 'Selamat Datang Admin Utama';
-		$this->load->view('index2',$data);
+		$this->load->view('index',$data);
 	}
 
 }

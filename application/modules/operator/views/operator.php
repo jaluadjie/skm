@@ -49,14 +49,14 @@
                         <div class="row">
                           <div class="col-md-6">
                             <div class="form-group">
-                              <label class="bmd-label-floating">Username</label>
+                              <label class="label-floating">Username</label>
                               <input type="text" class="form-control" name="username">
                               <span class="help-block"></span>
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                              <label class="bmd-label-floating">Password</label>
+                              <label class="label-floating">Password</label>
                               <input type="password" class="form-control" name="password">
                               <span class="help-block"></span>
                             </div>
@@ -66,7 +66,7 @@
                         <div class="row">
                           <div class="col-md-8">
                             <div class="form-group">
-                              <label class="bmd-label-floating">Perangkat Daerah</label>
+                              <label class="label-floating">Perangkat Daerah</label>
                                 <select class="form-control form-select2" name="id_satker" id="pilih-opd" style="width: 100%;">
                                   <option disabled="" selected="">Pilih Nama OPD</option>
                                     <?php foreach($satker as $row):
@@ -79,7 +79,7 @@
                           </div>
                           <div class="col-md-2">
                             <div class="form-group">
-                              <label class="bmd-label-floating">Hak Akses</label>
+                              <label class="label-floating">Hak Akses</label>
                               <select class="form-control form-select2" name="hak_akses" id="hak_akses">
                                 <option disabled="" selected="">Pilih Hak Akses</option>
                                 <option value="1">Super Admin</option>
@@ -90,7 +90,7 @@
                           </div>
                           <div class="col-md-2">
                             <div class="form-group">
-                              <label class="bmd-label-floating">Status</label>
+                              <label class="label-floating">Status</label>
                               <select class="form-control form-select2" name="status" id="status">
                                 <option disabled="" selected="">Pilih Status</option>
                                 <option value="1">Aktif</option>

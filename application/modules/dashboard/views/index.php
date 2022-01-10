@@ -1,316 +1,292 @@
+<!--
+=========================================================
+Material Dashboard - v2.1.2
+=========================================================
+
+Product Page: https://www.creative-tim.com/product/material-dashboard
+Copyright 2020 Creative Tim (https://www.creative-tim.com)
+Coded by Creative Tim
+
+=========================================================
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
 <!DOCTYPE html>
-<html>
-    <head> 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SIKLB | BPBD Prov. Kalbar</title>
+<html lang="en">
 
-    <!-- Bootstrap -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-    <!-- iCheck -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.3/skins/flat/green.min.css" rel="stylesheet">
-    <!-- Switchery -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/switchery/0.8.2/switchery.min.css" rel="stylesheet">
-     <!-- Select2 -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet">
-    <!-- starrr -->
-    <link href="<?php echo base_url('assets/vendors/starrr/dist/starrr.css');?>" rel="stylesheet">
-    <!-- bootstrap-datetimepicker -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="<?=base_url('assets/img/apple-icon.png');?>">
+  <link rel="icon" type="image/png" href="<?=base_url('assets/img/favicon.png');?>">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    Dashboard e-SKM Pemerintah Prov. Kalbar
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <!-- CSS Files -->
+  <link href="<?=base_url('assets/dashboard/css/material-dashboard.css?v=2.1.2');?>" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap5.min.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="<?=base_url('assets/dashboard/demo/demo.css');?>" rel="stylesheet" />
+</head>
 
-    <!-- bootstrap-progressbar -->
-    <link href="<?php echo base_url('assets/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css');?>" rel="stylesheet">
-    <!-- JQVMap -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/jqvmap.min.css" rel="stylesheet"/>
-    <!-- bootstrap-daterangepicker -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/3.0.5/daterangepicker.min.css" rel="stylesheet">
+<body class="">
+  <div class="wrapper ">
+    <div class="sidebar" data-color="orange" data-background-color="white" data-image="<?=base_url('assets/dashboard/img/sidebar-1.jpg');?>">
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
-    <!-- Datatables -->
-    <link href="<?php echo base_url('assets/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css')?>" rel="stylesheet">
-    <link href="<?php echo base_url('assets/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css')?>" rel="stylesheet">
-    <link href="<?php echo base_url('assets/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css')?>" rel="stylesheet">
-    <link href="<?php echo base_url('assets/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css')?>" rel="stylesheet">
-    <link href="<?php echo base_url('assets/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css')?>" rel="stylesheet">
-
-    <!-- Custom Theme Style -->
-    <link href="<?php echo base_url('assets/css/dashboard.min.css')?>" rel="stylesheet">
-
-    </head> 
-    <body class="nav-sm">
-        <div class="container body">
-      <div class="main_container">
-        <div class="col-md-3 left_col menu_fixed">
-          <div class="left_col scroll-view">
-            <div class="navbar nav_title" style="border: 0;">
-              <a href="#" class="site_title"><i class="fa fa-truck"></i> <span>BPBD Prov.Kalbar</span></a>
-            </div>
-
-            <div class="clearfix"></div>
-
-             <!-- menu profile quick info -->
-            <div class="profile clearfix">
-              <div class="profile_pic">
-                <img src="../assets/images/img.jpg" alt="..." class="img-circle profile_img">
-              </div>
-              <div class="profile_info">
-                <span>Selamat Datang,</span>
-                <h2>Admin</h2>
-              </div>
-            </div>
-            <!-- /menu profile quick info -->
-
-            <br />
-
-            <!-- sidebar menu -->
-            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-              <div class="menu_section">
-                <h3>Menu</h3>
-                <ul class="nav side-menu">
-                  <li><a class="klik_menu" id="dasboard"><i class="fa fa-home"></i> Dashboard </a></li>
-                  <li><a><i class="fa fa-table"></i> Tabel Master <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a class="klik_menu" id="sbarang">Sumber Barang</a></li>
-                      <li><a class="klik_menu" id="barang">Barang</a></li>
-                      <li><a class="klik_menu" id="instansi">Instansi</a></li>
-                      <li><a class="klik_menu" id="wilayah">Kab / Kota</a></li>
-                      <li><a class="klik_menu" id="user">User</a></li>
-                      <li><a class="klik_menu" id="pejabat">Pejabat</a></li>
-                    </ul>
+        Tip 2: you can also add an image using data-image tag
+    -->
+      <div class="logo"><a href="#" class="simple-text logo-normal">
+          <img src="<?=base_url('assets/img/sekam-padi.png');?>" alt="Sekam Padi" width="225">
+        </a></div>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+          <li class="nav-item active">
+            <a class="nav-link klik_menu" id="dashboard" href="#dashboard">
+              <i class="material-icons">dashboard</i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a data-toggle="collapse" href="#pagesMaster" class="nav-link">
+                <i class="material-icons">grid_on</i>
+                <p>Tabel Master
+                  <b class="caret"></b>
+                </p>
+            </a>
+            <div class="collapse" id="pagesMaster">
+                <ul class="nav" style="padding-left: 15px;">
+                  <li class="nav-item">
+                    <a class="nav-link klik_menu" id="operator" href="#operator">
+                      <i class="material-icons">account_box</i>Operator
+                    </a>
                   </li>
-                  <li><a class="klik_menu" id="pengadaan"><i class="fa fa-edit"></i> Pengadaan Barang </a>
+                  <li class="nav-item">
+                    <a class="nav-link klik_menu" id="layanan" href="#layanan">
+                      <i class="material-icons">local_offer</i>Layanan
+                    </a>
                   </li>
-                  <li><a class="klik_menu" id="distribusi"><i class="fa fa-plane"></i> Distribusi Barang </a>
-                  </li>
-                  <li><a class="klik_menu" id="laporan"><i class="fa fa-bar-chart-o"></i>Laporan </a>
+                  <li class="nav-item">
+                    <a class="nav-link klik_menu" id="pertanyaan" href="#pertanyaan">
+                      <i class="material-icons">quiz</i>Pertanyaan
+                    </a>
                   </li>
                 </ul>
-              </div>
             </div>
-            <!-- /sidebar menu -->
-          </div>
-        </div>
-
-        <!-- top navigation -->
-        <div class="top_nav hidden-print">
-          <div class="nav_menu">
-            <nav>
-              <div class="nav toggle">
-                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
-              </div>
-
-              <ul class="nav navbar-nav navbar-right">
-                <li class="">
-                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="../assets/images/img.jpg" alt="">John Doe
-                    <span class=" fa fa-angle-down"></span>
+        </li>
+          <li class="nav-item">
+            <a data-toggle="collapse" href="#pagesSurvey" class="nav-link">
+                <i class="material-icons">content_paste</i>
+                <p>Survey
+                  <b class="caret"></b>
+                </p>
+            </a>
+            <div class="collapse" id="pagesSurvey">
+                <ul class="nav" style="padding-left: 15px;">
+                <li class="nav-item ">
+                  <a class="nav-link klik_menu" id="responden" href="#responden">
+                    <i class="material-icons">people_outline</i>Responden
                   </a>
-                  <ul class="dropdown-menu dropdown-usermenu pull-right">
-                    <li><a href="javascript:;"> Profile</a></li>
-                    <li>
-                      <a href="javascript:;">
-                        <span class="badge bg-red pull-right">50%</span>
-                        <span>Settings</span>
-                      </a>
-                    </li>
-                    <li><a href="javascript:;">Help</a></li>
-                    <li><a href="<?php echo base_url('login/logout');?>"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
-                  </ul>
                 </li>
-
-                <li role="presentation" class="dropdown">
-                  <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
-                    <i class="fa fa-envelope-o"></i>
-                    <span class="badge bg-green">6</span>
-                  </a>
-                  <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
-                    <li>
-                      <a>
-                        <span class="image"><img src="../assets/images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        <span class="image"><img src="../assets/images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        <span class="image"><img src="../assets/images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        <span class="image"><img src="../assets/images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <div class="text-center">
-                        <a>
-                          <strong>See All Alerts</strong>
-                          <i class="fa fa-angle-right"></i>
-                        </a>
-                      </div>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </nav>
-          </div>
+                  <li class="nav-item">
+                    <a class="nav-link klik_menu" id="layanan" href="#layanan">
+                      <i class="material-icons">local_offer</i>Layanan
+                    </a>
+                  </li>
+                </ul>
+            </div>
+        </li>
+        </ul> 
       </div>
-        <!-- /top navigation -->
-        
-        <div class="right_col" role="main">
-
-            <div class="badan">
-
-            
-
-            </div>
-        </div>
-        <!-- footer content -->
-        <footer>
-          <div class="pull-right hidden-print">
-            Sistem Informasi Ketersediaan Logistik Bencana - BPBD Prov. Kalbar <i class="fa fa-copyright"></i> 2017
-          </div>
-          <div class="clearfix"></div>
-        </footer>
-        <!-- /footer content -->
-        </div>
     </div>
+    <div class="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+        <div class="container-fluid">
+            <div class="navbar-minimize">
+                <button id="minimizeSidebar" class="btn btn-round btn-white btn-fill btn-just-icon">
+                    <i class="material-icons visible-on-sidebar-regular">more_vert</i>
+                    <i class="material-icons visible-on-sidebar-mini">view_list</i>
+                </button>
+            </div>
+          <div class="navbar-wrapper">
+            <a class="navbar-brand" href="javascript:;"><?=$title;?></a>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end">
+            <form class="navbar-form">
+              <div class="input-group no-border">
+                <input type="text" value="" class="form-control" placeholder="Search...">
+                <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                  <i class="material-icons">search</i>
+                  <div class="ripple-container"></div>
+                </button>
+              </div>
+            </form>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="javascript:;">
+                  <i class="material-icons">dashboard</i>
+                  <p class="d-lg-none d-md-block">
+                    Stats
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="material-icons">notifications</i>
+                  <span class="notification">5</span>
+                  <p class="d-lg-none d-md-block">
+                    Some Actions
+                  </p>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#">Mike John responded to your email</a>
+                  <a class="dropdown-item" href="#">You have 5 new tasks</a>
+                  <a class="dropdown-item" href="#">You're now friend with Andrew</a>
+                  <a class="dropdown-item" href="#">Another Notification</a>
+                  <a class="dropdown-item" href="#">Another One</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="javascript:;" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="material-icons">person</i>
+                  <p class="d-lg-none d-md-block">
+                    Account
+                  </p>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
+                  <a class="dropdown-item" href="#">Profile</a>
+                  <a class="dropdown-item" href="#">Settings</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="<?=base_url('login/logout');?>">Log out</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- End Navbar -->
 
-    <!-- jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!-- Bootstrap -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <!-- FastClick -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
-    <!-- Chart.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.1/chart.min.js"></script>
-    <!-- gauge.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gauge.js/1.3.7/gauge.min.js"></script>
-    <!-- bootstrap-progressbar -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-progressbar/0.9.0/bootstrap-progressbar.min.js"></script>
-    <!-- iCheck -->
-    <script src="<?=base_url("assets/iCheck/icheck.min.js");?>"></script>
-    <!-- Skycons -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/skycons/1396634940/skycons.min.js"></script>
-    <!-- Flot -->
-    <script src="<?php echo base_url('assets/js/Flot/jquery.flot.js');?>"></script>
-    <script src="<?php echo base_url('assets/js/Flot/jquery.flot.pie.js');?>"></script>
-    <script src="<?php echo base_url('assets/js/Flot/jquery.flot.time.js');?>"></script>
-    <script src="<?php echo base_url('assets/js/Flot/jquery.flot.stack.js');?>"></script>
-    <script src="<?php echo base_url('assets/js/Flot/jquery.flot.resize.js');?>"></script>
-    <!-- Flot plugins -->
-    <script src="<?php echo base_url('assets/js/flot.orderbars/js/jquery.flot.orderBars.js');?>"></script>
-    <script src="<?php echo base_url('assets/js/flot-spline/js/jquery.flot.spline.min.js');?>"></script>
-    <script src="<?php echo base_url('assets/js/flot.curvedlines/curvedLines.js');?>"></script>
-    <!-- DateJS -->
-    <script src="<?php echo base_url('assets/js/date-id-ID.js');?>"></script>
-    <!-- JQVMap -->
-    <script src="<?php echo base_url('assets/vendors/jqvmap/dist/jquery.vmap.js');?>"></script>
-    <script src="<?php echo base_url('assets/vendors/jqvmap/dist/maps/jquery.vmap.world.js');?>"></script>
-    <script src="<?php echo base_url('assets/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js');?>"></script>
-    <!-- bootstrap-daterangepicker -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/locale/id.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/3.0.5/daterangepicker.min.js"></script>
-    <!-- bootstrap-datetimepicker -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+            <div class="content">
+                <!-- inject html disini -->
+            </div>
 
-    <!-- Datatables -->
-    <script src="<?php echo base_url('assets/vendors/datatables.net/js/jquery.dataTables.min.js')?>"></script>
-    <script src="<?php echo base_url('assets/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js')?>"></script>
-    <script src="<?php echo base_url('assets/vendors/datatables.net-buttons/js/dataTables.buttons.min.js')?>"></script>
-    <script src="<?php echo base_url('assets/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js')?>"></script>
-    <script src="<?php echo base_url('assets/vendors/jszip/dist/jszip.min.js')?>"></script>
-    <script src="<?php echo base_url('assets/vendors/pdfmake/build/pdfmake.min.js')?>"></script>
-    <script src="<?php echo base_url('assets/vendors/pdfmake/build/vfs_fonts.js')?>"></script>
-    <script src="<?php echo base_url('assets/vendors/datatables.net-buttons/js/buttons.flash.min.js')?>"></script>
-    <script src="<?php echo base_url('assets/vendors/datatables.net-buttons/js/buttons.html5.min.js')?>"></script>
-    <script src="<?php echo base_url('assets/vendors/datatables.net-buttons/js/buttons.print.min.js')?>"></script>
-    <script src="<?php echo base_url('assets/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js')?>"></script>
-    <script src="<?php echo base_url('assets/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js')?>"></script>
-    <script src="<?php echo base_url('assets/vendors/datatables.net-responsive/js/dataTables.responsive.min.js')?>"></script>
-    <script src="<?php echo base_url('assets/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js')?>"></script>
-    <script src="<?php echo base_url('assets/vendors/datatables.net-scroller/js/dataTables.scroller.min.js')?>"></script>
+            <footer class="footer">
+        <div class="container-fluid">
+          <nav class="float-left">
+            <ul>
+              <li>
+                <a href="https://www.creative-tim.com">Creative Tim</a>
+              </li>
+              <li>
+                <a href="https://creative-tim.com/presentation">About Us</a>
+              </li>
+              <li>
+                <a href="http://blog.creative-tim.com">Blog</a>
+              </li>
+              <li>
+                <a href="https://www.creative-tim.com/license">Licenses</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="copyright float-right">
+          <a href="http://biroorganisasi.kalbarprov.go.id">Biro Organisasi Setda Prov. Kalbar</a>
+            &copy;
+            <script>
+              document.write(new Date().getFullYear())
+            </script>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <!--   Core JS Files   -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script src="<?=base_url('assets/dashboard/js/core/popper.min.js');?>"></script>
+  <script src="<?=base_url('assets/dashboard/js/core/bootstrap-material-design.min.js');?>"></script>
+  <script src="<?=base_url('assets/dashboard/js/plugins/perfect-scrollbar.jquery.min.js');?>"></script>
+  <!-- Plugin for the momentJs  -->
+  <script src="<?=base_url('assets/dashboard/js/plugins/moment.min.js');?>"></script>
+  <!--  Plugin for Sweet Alert -->
+  <script src="<?=base_url('assets/dashboard/js/plugins/sweetalert2.js');?>"></script>
+  <!-- Forms Validations Plugin -->
+  <script src="<?=base_url('assets/dashboard/js/plugins/jquery.validate.min.js');?>"></script>
+  <!-- Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
+  <script src="<?=base_url('assets/dashboard/js/plugins/jquery.bootstrap-wizard.js');?>"></script>
+  <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+  <script src="<?=base_url('assets/dashboard/js/plugins/bootstrap-selectpicker.js');?>"></script>
+  <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
+  <script src="<?=base_url('assets/dashboard/js/plugins/bootstrap-datetimepicker.min.js');?>"></script>
+  <!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
+  <script src="<?=base_url('assets/dashboard/js/plugins/jquery.dataTables.min.js');?>"></script>
+  <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
+  <script src="<?=base_url('assets/dashboard/js/plugins/bootstrap-tagsinput.js');?>"></script>
+  <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
+  <script src="<?=base_url('assets/dashboard/js/plugins/jasny-bootstrap.min.js');?>"></script>
+  <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
+  <script src="<?=base_url('assets/dashboard/js/plugins/fullcalendar.min.js');?>"></script>
+  <!-- Vector Map plugin, full documentation here: http://jvectormap.com/documentation/ -->
+  <script src="<?=base_url('assets/dashboard/js/plugins/jquery-jvectormap.js');?>"></script>
+  <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+  <script src="<?=base_url('assets/dashboard/js/plugins/nouislider.min.js');?>"></script>
+  <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+  <!-- Library for adding dinamically elements -->
+  <script src="<?=base_url('assets/dashboard/js/plugins/arrive.min.js');?>"></script>
+  <!-- Chartist JS -->
+  <script src="<?=base_url('assets/dashboard/js/plugins/chartist.min.js');?>"></script>
+  <!--  Notifications Plugin    -->
+  <script src="<?=base_url('assets/dashboard/js/plugins/bootstrap-notify.js');?>"></script>
+  <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="<?=base_url('assets/dashboard/js/material-dashboard.js?v=2.1.2');?>" type="text/javascript"></script>
+  <!-- Select2 -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js'></script>
+  
+  <script type="text/javascript">
+    $(document).ready(function() {
+        $(".klik_menu").click(function(){
+        var menu = $(this).attr("id");
+        if(menu == ''){
+            loading();
+            $('.content').load("<?=base_url('dashboard');?>");           
+        }
+        else {
+            loading();
+            $('.content').load('<?=base_url();?>'+menu);
+            $('li.nav-item').removeClass("active");
+            $(this).parent().addClass("active");
+        }
+        
+    });
 
-    <!-- Custom Theme Scripts -->
-    <script src="<?php echo base_url('assets/js/dashboard.js')?>"></script>
+        //load page awal
+        $('.content').load("<?php echo base_url('dashboard');?>");
 
-<script type="text/javascript">
-  $(document).ready(function(){
-    $(".klik_menu").click(function(){
-      var menu = $(this).attr("id");
-      if(menu == 'dasboard'){
-        loading();
-        $('.badan').load("<?php echo base_url().'dashboard';?>");           
-      }else if(menu == 'sbarang'){
-        loading();
-        $('.badan').load("<?php echo base_url().'sbarang';?>");
-      }else if(menu == 'barang'){
-        loading();
-        $('.badan').load("<?php echo base_url().'barang';?>");           
-      }else if(menu == 'wilayah'){
-        loading();
-        $('.badan').load("<?php echo base_url().'wilayah';?>");           
-      }else if(menu == 'user'){
-        loading();
-        $('.badan').load("<?php echo base_url().'user';?>");           
-      }else if(menu == 'pejabat'){
-        loading();
-        $('.badan').load("<?php echo base_url().'pejabat';?>");           
-      }else if(menu == 'pengadaan'){
-        loading();
-        $('.badan').load("<?php echo base_url().'pengadaan';?>");           
-      }else if(menu == 'distribusi'){
-        loading();
-        $('.badan').load("<?php echo base_url().'distribusi';?>");
-      }else if(menu == 'instansi'){
-        loading();
-        $('.badan').load("<?php echo base_url().'instansi';?>");
-      }else if(menu == 'laporan'){
-        loading();
-        $('.badan').load("<?php echo base_url().'laporan';?>");
-    }
-  });
+        //active menu sidebar
+        // $('ul li a.klik_menu').click(function(){
+        // $('li.nav-item').removeClass("active");
+        // $(this).parent().addClass("active");
+    // });
 
-    //load page awal
-    $('.badan').load("<?php echo base_url().'dashboard';?>");
- 
-  });
-  function loading(){
-    $(".badan").html('<center><img src="<?php echo base_url().'assets/images/loader.gif';?>"/><i> loading page ...</i></center>');
-    $(".badan").hide();
-    $(".badan").fadeIn("slow");
+    });
+
+    function loading(){
+    $(".content").html('<center><img src="<?php echo base_url('assets/images/loader.gif');?>"/><i> loading page ...</i></center>');
+    $(".content").hide();
+    $(".content").fadeIn("slow");
   };
 </script>
+</body>
+
+</html>

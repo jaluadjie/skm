@@ -50,7 +50,7 @@
                         <div class="row">
                         <div class="col-md-10">
                             <div class="form-group">
-                              <label class="bmd-label-floating">Perangkat Daerah</label>
+                              <label class="label-floating">Perangkat Daerah</label>
                                 <select class="form-control" name="id_satker" id="pilih-opd">
                                   <option disabled="" selected="">Pilih Nama OPD</option>
                                     <?php foreach($satker as $row):
@@ -66,7 +66,7 @@
                         <div class="row">
                           <div class="col-md-8">
                             <div class="form-group">
-                              <label class="bmd-label-floating">Nama Layanan</label>
+                              <label class="label-floating">Nama Layanan</label>
                               <input type="text" class="form-control" name="n_layanan">
                               <span class="help-block"></span>
                             </div>
@@ -76,8 +76,8 @@
                         <div class="row">
                           <div class="col-md-12">
                             <div class="form-group">
-                              <label class="bmd-label-floating">Dasar Hukum</label>
-                              <textarea class="form-control" name="n_dasar hukum" rows="3"></textarea>
+                              <label class="label-floating">Dasar Hukum</label>
+                              <textarea class="form-control" name="n_dasar_hukum" rows="3"></textarea>
                               <span class="help-block"></span>
                             </div>
                           </div>
@@ -86,15 +86,15 @@
                         <div class="row">
                           <div class="col-md-6">
                             <div class="form-group">
-                              <label class="bmd-label-floating">Biaya</label>
+                              <label class="label-floating">Biaya</label>
                               <input type="text" class="form-control" name="biaya">
                               <span class="help-block"></span>
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                              <label class="bmd-label-floating">Standar Waktu</label>
-                              <input type="text" class="form-control" name="s_waktu">
+                              <label class="label-floating">Standar Waktu</label>
+                              <input type="text" class="form-control" name="standar_waktu">
                               <span class="help-block"></span>
                             </div>
                           </div>
@@ -103,7 +103,7 @@
                         <div class="row">
                           <div class="col-md-12">
                             <div class="form-group">
-                              <label class="bmd-label-floating">Spesifikasi</label>
+                              <label class="label-floating">Spesifikasi</label>
                               <textarea class="form-control" name="spesifikasi" rows="3"></textarea>
                               <span class="help-block"></span>
                             </div>
