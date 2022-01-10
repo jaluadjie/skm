@@ -27,7 +27,7 @@
       <div class="login_wrapper">
         <div class="animate form login_form">
           <section class="login_content">
-            
+          <img src="<?=base_url('assets/img/sekam-padi.png');?>" alt="e-SKM" width="350">
             <?php echo form_open('login/auth');?>
               <h1>Silahkan Login</h1>
               <?php echo $this->session->flashdata('msg');?>
@@ -47,7 +47,8 @@
                 <br />
 
                 <div>
-                  <h1><i class="fa fa-truck"></i> Dashboard e-Survey Kepuasan Masyarakat</h1>
+                  <img src="<?=base_url('assets/img/bo-prima-ii.png');?>" alt="bo-prima-ii" width="150">
+                  <p></p>
                   <p>©2021 Biro Organisasi Sekretariat Daerah</p><p> Provinsi Kalimantan Barat</p>
                 </div>
               </div>

@@ -42,7 +42,7 @@ The above copyright notice and this permission notice shall be included in all c
         Tip 2: you can also add an image using data-image tag
     -->
       <div class="logo"><a href="#" class="simple-text logo-normal">
-          e-SKM
+          <img src="<?=base_url('assets/img/sekam-padi.png');?>" alt="e-SKM" width="225">
         </a></div>
       <div class="sidebar-wrapper">
         <ul class="nav">
@@ -196,7 +196,7 @@ The above copyright notice and this permission notice shall be included in all c
             </ul>
           </nav>
           <div class="copyright float-right">
-          <a href="http://biroorganisasi.kalbarprov.go.if">Biro Organisasi</a>
+          <a href="http://biroorganisasi.kalbarprov.go.id">Biro Organisasi Setda Prov. Kalbar</a>
             &copy;
             <script>
               document.write(new Date().getFullYear())

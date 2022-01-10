@@ -92,6 +92,23 @@ class Responden_model extends CI_Model {
 		return $query->result();
 	}
 
+	function chart_rentang_usia(){
+		$sql = "SELECT t.umur_group, COUNT(*) as umur_count 
+					FROM
+					(
+						SELECT
+							CASE WHEN umur BETWEEN 20 and 25 THEN '20-25'
+								WHEN umur BETWEEN 26 and 30 THEN '26-30'
+								WHEN umur BETWEEN 31 and 35 THEN '31-35'
+								ELSE 'Lainnya'
+							END AS umur_group
+						FROM tb_responden
+					)t
+					GROUP BY t.umur_group";
+		$query = $this->db->query($sql);
+		return $query->result();
+	}
+
 	function get_datatables()
 	{
 		$this->_get_datatables_query();

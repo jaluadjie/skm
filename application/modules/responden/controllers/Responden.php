@@ -156,7 +156,11 @@ class Responden extends CI_Controller {
 
 	function google_chart(){
 		$var=$this->uri->segment(3);
-		$data=$this->responden->chart($var);
+		if($var == 'usia'){
+			$data=$this->responden->chart_rentang_usia();
+		}else{
+			$data=$this->responden->chart($var);
+		}
 		echo json_encode($data);
 	}
 
