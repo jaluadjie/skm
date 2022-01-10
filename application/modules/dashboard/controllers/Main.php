@@ -8,6 +8,9 @@ class Main extends CI_Controller {
 		parent::__construct();
 		$this->load->helper('url');
 		//$this->load->model('user_model','user');
+		if(!$this->session->userdata('masuk')){
+            redirect('login');
+        }
 	}
 
 	public function index()
