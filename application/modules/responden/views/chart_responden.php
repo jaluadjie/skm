@@ -6,13 +6,8 @@
                 $.ajax({
                     url : "<?php echo site_url('responden/google_chart/jk')?>",
                     dataType : "JSON",
-                    before: function(){
-                        document.getElementById('responden_jk').innerHTML('proses');
-                    },
                     success : function(result) {
-                        google.charts.load('current', {
-                            'packages' : [ 'corechart' ]
-                        });
+                        google.charts.load('current', {'packages' : [ 'corechart' ]});
                         google.charts.setOnLoadCallback(function() {
                             drawChart(result);
                         });
@@ -57,9 +52,7 @@
                     url : "<?php echo site_url('responden/google_chart/edu')?>",
                     dataType : "JSON",
                     success : function(result) {
-                        google.charts.load('current', {
-                            'packages' : [ 'corechart' ]
-                        });
+                        google.charts.load('current', {'packages' : [ 'corechart' ]});
                         google.charts.setOnLoadCallback(function() {
                             drawChart(result);
                         });
@@ -204,9 +197,7 @@
                 <p class="card-category">Responden berdasarkan Jenis Kelamin</p>
                 <h3 class="card-title"></h3>
             </div>
-            <div class="card-body">
-                <div id="responden_jk"></div>
-            </div>
+            <div id="responden_jk"></div>
         </div>
     </div>
     <div class="col-lg-3 col-md-6 col-sm-6">
@@ -218,9 +209,7 @@
                 <p class="card-category">Responden berdasarkan Pendidikan</p>
                 <h3 class="card-title"></h3>
             </div>
-            <div class="card-body">
-                <div id="responden_edu"></div>
-            </div>
+            <div id="responden_edu"></div>
         </div>
     </div>
     <div class="col-lg-3 col-md-6 col-sm-6">
@@ -232,9 +221,7 @@
                 <p class="card-category">Responden berdasarkan Pekerjaan</p>
                 <h3 class="card-title"></h3>
             </div>
-            <div class="card-body">
-                <div id="responden_job"></div>
-            </div>
+            <div id="responden_job"></div>
         </div>
     </div>
     <div class="col-lg-3 col-md-6 col-sm-6">
@@ -246,9 +233,7 @@
                 <p class="card-category">Responden berdasarkan Usia</p>
                 <h3 class="card-title"></h3>
             </div>
-            
-                <div id="responden_usia"></div>
-            
+            <div id="responden_usia"></div>
         </div>
     </div>
 </div>
