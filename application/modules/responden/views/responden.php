@@ -137,14 +137,14 @@ $(document).ready(function() {
         };
 
     //reload button
-    $.fn.dataTable.ext.buttons.reload = {
-        className: "btn-sm",
-        text:"<i class='fa fa-refresh'></i>",
-        titleAttr:"Reload",
-        action: function ( e, dt, node, config ) {
-            dt.ajax.reload();
-        }
-    };
+    // $.fn.dataTable.ext.buttons.reload = {
+    //     className: "btn-sm",
+    //     text:"<i class='fa fa-refresh'></i>",
+    //     titleAttr:"Reload",
+    //     action: function ( e, dt, node, config ) {
+    //         dt.ajax.reload();
+    //     }
+    // };
 
     //datatables
     table = $('#table').DataTable({ 
@@ -197,7 +197,7 @@ $(document).ready(function() {
         //     },
         //     "reload"
         // ],
-        "pageLength":5,
+        "pageLength":10,
         "order": [[1, 'asc']],
         "rowCallback": function (row, data, iDisplayIndex) {
                         var info = this.fnPagingInfo();

@@ -1,27 +1,33 @@
 <html lang="en">
 <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </head>
 <body>
-    <h4>Grafik Perkembangan Jumlah Perda & Pergub Pertahun</h4>
+    <h4>Coba Chat Js</h4>
     <div>
-        <canvas id="jk"></canvas>
+        <canvas id="myChart"></canvas>
     </div>
     <script>
         $(document).ready(function() {
             $.ajax({
                 url: "<?php echo site_url('responden/google_chart/jk')?>",
                 method: "GET",
-                success: function(data) {
-                    console.log(data);
+                dataType: 'json',
+                success: function(response) {
+                    //console.log(response);
                     var label = [];
                     var value = [];
-                    for (var i in data) {
-                        label.push(data[i].nama);
-                        value.push(data[i].jumlah);
-                    }
-                    var ctx = document.getElementById('jk').getContext('2d');
+                    response.forEach(function (element) {
+                        label.push(element.nama)
+                        value.push(element.jumlah)
+                    })
+                    // for (var i in response) {
+                    //     label.push(response[i].nama);
+                    //     value.push(response[i].jumlah);
+                    // }
+                    console.log(label, value)
+                    var ctx = document.getElementById('myChart').getContext('2d');
                     var chart = new Chart(ctx, {
                         type: 'pie',
                         data: {
@@ -34,19 +40,7 @@
                                 data: value
                             }]
                         },
-                        options: {
-                            //konfigurasi tooltip
-                            tooltips: {
-                                callbacks: {
-                                    label: function(tooltipItem, data) {
-                                        var dataset = data.datasets[tooltipItem.datasetIndex];
-                                        var labels = data.labels[tooltipItem.index];
-                                        var currentValue = dataset.data[tooltipItem.index];
-                                        // return labels+": "+currentValue+" %";
-                                    }
-                                }
-                            }
-                        }
+                        options: {}
                     });
                 }
             });

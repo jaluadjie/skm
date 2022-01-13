@@ -18,7 +18,7 @@ The above copyright notice and this permission notice shall be included in all c
   <link rel="icon" type="image/png" href="<?=base_url('assets/img/favicon.png');?>">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Dashboard e-SKM Pemerintah Prov. Kalbar
+    Dashboard Sekam Padi Pemerintah Prov. Kalbar
   </title>
   <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -44,7 +44,9 @@ The above copyright notice and this permission notice shall be included in all c
       <div class="logo"><a href="#" class="simple-text logo-normal">
           <img src="<?=base_url('assets/img/sekam-padi.png');?>" alt="Sekam Padi" width="225">
         </a></div>
-      <div class="sidebar-wrapper">
+      
+      <!-- Menu Sidebar -->      
+        <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="nav-item active">
             <a class="nav-link klik_menu" id="dashboard" href="#dashboard">
@@ -82,7 +84,7 @@ The above copyright notice and this permission notice shall be included in all c
           <li class="nav-item">
             <a data-toggle="collapse" href="#pagesSurvey" class="nav-link">
                 <i class="material-icons">content_paste</i>
-                <p>Survey
+                <p>Moderasi
                   <b class="caret"></b>
                 </p>
             </a>
@@ -94,12 +96,18 @@ The above copyright notice and this permission notice shall be included in all c
                   </a>
                 </li>
                   <li class="nav-item">
-                    <a class="nav-link klik_menu" id="layanan" href="#layanan">
-                      <i class="material-icons">local_offer</i>Layanan
+                    <a class="nav-link klik_menu" id="penilaian" href="#penilaian">
+                      <i class="material-icons">poll</i>Penilaian
                     </a>
                   </li>
                 </ul>
             </div>
+            <li class="nav-item">
+            <a class="nav-link klik_menu" id="report" href="#report">
+              <i class="material-icons">summarize</i>
+              <p>Laporan</p>
+            </a>
+          </li>
         </li>
         </ul> 
       </div>
@@ -115,7 +123,7 @@ The above copyright notice and this permission notice shall be included in all c
                 </button>
             </div>
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="javascript:;"><?=$title;?></a>
+            <a class="navbar-brand" href="javascript:;">Hai <?=$uname;?></a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>

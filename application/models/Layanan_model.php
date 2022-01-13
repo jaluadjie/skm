@@ -13,4 +13,10 @@ class Layanan_model extends CI_Model{
         return $query;
     }
 
+    public function count_all()
+	{
+		$this->db->from('tb_layanan');
+		return $this->db->count_all_results();
+	}
+
 }

@@ -16,10 +16,19 @@ class Layanan_model extends CI_Model {
 
 	private function _get_datatables_query()
 	{
-		
-		$this->db->select('*');
-		$this->db->from($this->table);
-		$this->db->join('tbm_satker', 'tb_layanan.id_satker = tbm_satker.id_satker');
+		$session_data = $_SESSION['masuk'];
+		$hak_akses = $session_data['hak_akses'];
+		$id_satker = $session_data['id_satker'];
+		if($hak_akses == 1){
+			$this->db->select('*');
+			$this->db->from($this->table);
+			$this->db->join('tbm_satker', 'tb_layanan.id_satker = tbm_satker.id_satker');
+		}else{
+			$this->db->select('*');
+			$this->db->from($this->table);
+			$this->db->join('tbm_satker', 'tb_layanan.id_satker = tbm_satker.id_satker');
+			$this->db->where('tb_layanan.id_satker = '.$id_satker);
+		};
 
 		//$this->db->get();
 

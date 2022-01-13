@@ -27,7 +27,7 @@
       <div class="login_wrapper">
         <div class="animate form login_form">
           <section class="login_content">
-          <img src="<?=base_url('assets/img/sekam-padi.png');?>" alt="e-SKM" width="350">
+          <img src="<?=base_url('assets/img/sekam-padi.png');?>" alt="Sekam Padi" width="350">
             <?php echo form_open('login/auth');?>
               <h1>Silahkan Login</h1>
               <?php echo $this->session->flashdata('msg');?>

@@ -2,7 +2,7 @@
 class Login extends CI_Controller{
     function __construct(){
         parent::__construct();
-        $this->load->model('Login_model','login');
+        $this->load->model('Login_model','m_login');
         $this->load->helper('form');
         $this->load->library('form_validation');
     }
@@ -31,14 +31,16 @@ class Login extends CI_Controller{
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
 
-		$cek_ = $this->login->auth_user($username, $password);
+		$cek_ = $this->m_login->auth_user($username, $password);
 
 		if($cek_) {
 			$sess_array = array();
 			foreach ($cek_ as $row) {
 				$sess_array = array(
 					'akses' => $row->hak_akses,
-					'sess_uname' => $row->username
+					'sess_uname' => $row->username,
+					'id_satker' => $row->id_satker,
+					'hak_akses' => $row->hak_akses
 				);
 				$this->session->set_userdata('masuk', $sess_array);
 			}

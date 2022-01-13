@@ -143,7 +143,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
       color: rgba(255, 255, 255, 0.9); }
 
 .wizard-container {
-  padding-top: 100px;
+  padding-top: 50px;
   z-index: 3; }
   .wizard-container .wizard-navigation {
     position: relative; }

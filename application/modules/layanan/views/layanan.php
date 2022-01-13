@@ -260,7 +260,7 @@ function edit_(id)
             $('[name="n_layanan"]').val(data.n_layanan);
             $('[name="n_dasar_hukum"]').val(data.n_dasar_hukum);
             $('[name="biaya"]').val(data.biaya);
-            $('[name="s_waktu"]').val(data.standar_waktu);
+            $('[name="standar_waktu"]').val(data.standar_waktu);
             $('[name="spesifikasi"]').val(data.spesifikasi);
             $('#modal_form').modal('show'); // show bootstrap modal when complete loaded
             $('.modal-kartu').text('Form Edit Layanan'); // Set title to Bootstrap modal title

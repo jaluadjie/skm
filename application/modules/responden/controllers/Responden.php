@@ -8,7 +8,7 @@ class Responden extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->helper('url');
-		$this->load->model('responden_model','responden');
+		$this->load->model('responden_model','m_responden');
 		//$this->load->model('user_model','user');
 		//validasi jika user belum login
     	if(!$this->session->userdata('masuk')){
@@ -27,7 +27,7 @@ class Responden extends CI_Controller {
 
 	public function ajax_list()
 	{
-		$list = $this->responden->get_datatables();
+		$list = $this->m_responden->get_datatables();
 		//$recordsTotal = $this->barang->count_all();
 		$data = array();
 		$no = $_POST['start'];
@@ -53,8 +53,8 @@ class Responden extends CI_Controller {
 
 		$output = array(
 						"draw" => $_POST['draw'],
-						"recordsTotal" => $this->responden->count_all(),
-						"recordsFiltered" => $this->responden->count_filtered(),
+						"recordsTotal" => $this->m_responden->count_all(),
+						"recordsFiltered" => $this->m_responden->count_filtered(),
 						"data" => $data,
 				);
 		//output to json format
@@ -63,7 +63,7 @@ class Responden extends CI_Controller {
 
 	public function ajax_edit($id)
 	{
-		$data = $this->responden->get_by_id($id);
+		$data = $this->m_responden->get_by_id($id);
 		echo json_encode($data);
 	}
 
@@ -77,7 +77,7 @@ class Responden extends CI_Controller {
 				'hak_akses' => $this->input->post('hak_akses'),
 				'status' => $this->input->post('status')
 			);
-		$insert = $this->responden->save($data);
+		$insert = $this->m_responden->save($data);
 		echo json_encode(array("status" => TRUE));
 	}
 
@@ -91,13 +91,13 @@ class Responden extends CI_Controller {
 				'hak_akses' => $this->input->post('hak_akses'),
 				'status' => $this->input->post('status')
 			);
-		$this->responden->update(array('id_user' => $this->input->post('id')), $data);
+		$this->m_responden->update(array('id_user' => $this->input->post('id')), $data);
 		echo json_encode(array("status" => TRUE));
 	}
 
 	public function ajax_delete($id)
 	{
-		$this->responden->delete_by_id($id);
+		$this->m_responden->delete_by_id($id);
 		echo json_encode(array("status" => TRUE));
 	}
 
@@ -150,16 +150,16 @@ class Responden extends CI_Controller {
 		}
 	}
 	function dt_responden(){
-		$data['responden'] = $this->responden->get_all();
+		$data['responden'] = $this->m_responden->get_all();
 		$this->load->view('dt_responden',$data);
 	}
 
 	function google_chart(){
 		$var=$this->uri->segment(3);
 		if($var == 'usia'){
-			$data=$this->responden->chart_rentang_usia();
+			$data=$this->m_responden->chart_rentang_usia();
 		}else{
-			$data=$this->responden->chart($var);
+			$data=$this->m_responden->chart($var);
 		}
 		echo json_encode($data);
 	}
@@ -172,6 +172,6 @@ class Responden extends CI_Controller {
 	function coba_chart(){
 		$data['title'] = 'Chart Responden';
 		$data['subcategory'] = 'Data Responden berdasarkan jenis kelamin, pendidikan dan pekerjaan';
-		$this->load->view('coba_chart',$data);
+		$this->load->view('coba_chart2',$data);
 	}
 }

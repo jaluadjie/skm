@@ -15,7 +15,9 @@ class Main extends CI_Controller {
 
 	public function index()
 	{
-		$data['title'] = 'Hai Admin!';
+		$session_data = $this->session->userdata('masuk');
+		$data['uname'] = $session_data['sess_uname'];
+		//$data['title'] = 'Hai Admin';
 		//$data['subtitle'] = 'Selamat Datang Admin Utama';
 		$this->load->view('index',$data);
 	}

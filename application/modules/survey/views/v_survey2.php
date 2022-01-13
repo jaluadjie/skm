@@ -25,39 +25,23 @@
 </head>
 
 <body>
-	<div class="image-container set-full-height" style="background-image: url('<?php echo base_url("assets/img/kantor-gubernur-kalbar-1.jpg");?>')">
-	    <!--   Creative Tim Branding   -->
-	    <a href="https://kalbarprov.go.id">
-	         <div class="logo-container">
-	            <div class="logo">
-	                <img src="<?=base_url("assets/img/logo-kalbar-80x80.png");?>">
-	            </div>
-	            <div class="brand">
-	                Pemerintah Provinsi Kalimantan Barat
-	            </div>
-	        </div>
-	    </a>
-
-		<!--  Made With Material Kit 
-		<a href="http://biroorganisasi.kalbarprov.go.id" class="made-with-mk">
-			<div class="brand">Biro</div>
-			<div class="made-with">Made with <strong>Material Kit</strong></div>
-		</a> -->
-
+	<div class="image-container set-full-height" style="background-image: url('<?php echo base_url("assets/img/wallpapertip_material-design-wallpapers-desktop_810349.jpg");?>')">
+	    
 	    <!--   Big container   -->
 	    <div class="container">
 	        <div class="row">
 		        <div class="col-sm-8 col-sm-offset-2">
 		            <!--      Wizard container        -->
 		            <div class="wizard-container">
-		                <div class="card wizard-card" data-color="purple" id="wizard">
+		                <div class="card wizard-card" data-color="blue" id="wizard">
 			                <form action="#" id="form_survey">
                             <input type="hidden" name="id_satker" value="<?=$satker['id_satker'];?>">
                             <input type="hidden" name="id_layanan" value="<?=$layanan['id_layanan'];?>">
 			                <!--        You can switch " data-color="rose" "  with one of the next bright colors: "blue", "green", "orange", "purple"        -->
 
 		                    	<div class="wizard-header">
-                                <h3 class="wizard-title">e-SKM <?=$satker['n_satker'];?></h3>
+                                <img src="<?=base_url('assets/img/sekam-padi.png');?>" alt="Sekam Padi" width="250px">
+                                <h3 class="wizard-title"><?=$satker['n_satker'];?></h3>
                                 <h5 class="text-center">Jenis pelayanan yang diterima: <?=$layanan['n_layanan'];?></h5>
 		                    	</div>
 								<div class="wizard-navigation">
@@ -126,25 +110,29 @@
                                                         switch ($row['bobot_nilai']){
                                                             case 4:
                                                                 $title = "Jika anda sangat puas dengan pelayanan kami";
-                                                                $icons = "sentiment_very_satisfied";
+                                                                // $icons = "sentiment_very_satisfied";
+                                                                $icons = "grinning-face-with-big-eyes_1f603";
                                                                 $h6 = "Sangat Baik";
                                                                 break;
 
                                                             case 3:
                                                                 $title = "Jika anda puas dengan pelayanan kami";
-                                                                $icons = "sentiment_satisfied";
+                                                                // $icons = "sentiment_satisfied";
+                                                                $icons = "slightly-smiling-face_1f642";
                                                                 $h6 = "Baik";
                                                                 break;
 
                                                             case 2:
                                                                 $title = "Jika anda tidak puas dengan pelayanan kami";
-                                                                $icons = "sentiment_dissatisfied";
+                                                                // $icons = "sentiment_dissatisfied";
+                                                                $icons = "neutral-face_1f610";
                                                                 $h6 = "Kurang Baik";
                                                                 break;
 
                                                             default:
                                                                 $title = "Jika anda sangat tidak puas dengan pelayanan kami";
-                                                                $icons = "sentiment_very_dissatisfied";
+                                                                // $icons = "sentiment_very_dissatisfied";
+                                                                $icons = "disappointed-face_1f61e";
                                                                 $h6 = "Buruk";
                                                                 break;
                                                         }
@@ -153,7 +141,8 @@
                                                             <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="<?=$title;?>">
                                                                 <input type="radio" name="umum" value="<?=$row['bobot_nilai'];?>">
                                                                 <div class="icon">
-                                                                    <i class="material-icons"><?=$icons;?></i>
+                                                                    <!-- <i class="material-icons"><//echo icons></i> -->
+                                                                    <img src="<?=base_url('assets/img/'.$icons.'.png');?>" width="110px">
                                                                 </div>
                                                                 <h6><?=$h6;?></h6>
                                                             </div>
@@ -184,7 +173,7 @@
                                                         <input type="hidden" name="pertanyaan_<?=$q['id_pertanyaan'];?>" value="<?=$q['id_pertanyaan'];?>">
                                                         <?php
                                                             foreach($jawaban as $a){
-                                                                echo "<div><label><input type='radio' class='flat' name='jawaban_".$q['id_pertanyaan']."' value='".$a['bobot_nilai']."'> ".$a['n_jawaban']."</label></div>";
+                                                                echo "<div class='radio'><input type='radio' class='flat' name='jawaban_".$q['id_pertanyaan']."' value='".$a['bobot_nilai']."'>&nbsp;" .$a['n_jawaban']."</div>";
                                                             }
                                                         ?>
                                                     </div>
@@ -205,7 +194,7 @@
                                             <div class="col-sm-2">
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">Contoh</label>
-                                                    <p class="description">"Pelayanan yang diberikan kurang maksimal. Bisa ditingkatkan lebih baik lagi."</p>
+                                                    <p class="description">"Petugas pelayanan sangat ramah, ruang tunggu jg sangat comfy. Terus tingkatkan!!!"</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -230,7 +219,8 @@
 
 	    <div class="footer">
 	        <div class="container text-center">
-            <a href="http://biroorganisasi.kalbarprov.go.if">Biro Organisasi Sekretariat Daerah Prov. Kalbar</a>
+            <img src="<?=base_url('assets/img/pemprov_white.png');?>" alt="Logo Pemprov" width="150">&nbsp;&nbsp;&nbsp;&nbsp;<img src="<?=base_url('assets/img/bo_prima_white.png');?>" alt="Logo Biro Organisasi" width="150"><br><br>
+            <a href="http://biroorganisasi.kalbarprov.go.id">Biro Organisasi Sekretariat Daerah Prov. Kalbar</a>
             &copy;
             <script>
               document.write(new Date().getFullYear())
@@ -269,7 +259,7 @@
 	<script src="<?=base_url("assets/js/material-bootstrap-wizard.js");?>"></script>
 
 	<!--  More information about jquery.validate here: http://jqueryvalidation.org/	 -->
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js'></script>
 
     <script>
             $("#form_survey").validate({
