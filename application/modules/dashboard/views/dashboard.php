@@ -1,24 +1,31 @@
+<?php if($hak_akses == 1 ){
+  $cols = "col-lg-3 col-md-6 col-sm-6";
+}else{
+  $cols = "col-lg-4 col-md-4 col-sm-6";
+};?>
 <div class="container-fluid">
       <div class="row">
-        <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="<?=$cols;?>">
           <div class="card card-stats">
             <div class="card-header card-header-warning card-header-icon">
               <div class="card-icon">
               <i class="material-icons">people</i>
               </div>
-              <p class="card-category">Jumlah Responden</p>
+              <p class="card-category">Responden</p>
               <h3 class="card-title"><?=$jml_responden;?>
                 <small>Orang</small>
               </h3>
             </div>
             <div class="card-footer">
               <div class="stats">
-              <i class="material-icons">date_range</i> 24 jam terakhir
+              <i class="material-icons">update</i> Just Updated
               </div>
             </div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-6">
+
+        <?php if($hak_akses == 1) {?>
+        <div class="<?=$cols;?>">
           <div class="card card-stats">
             <div class="card-header card-header-success card-header-icon">
               <div class="card-icon">
@@ -30,12 +37,13 @@
             </div>
             <div class="card-footer">
               <div class="stats">
-                <i class="material-icons">date_range</i> 24 jam terakhir
+              <i class="material-icons">update</i> Just Updated
               </div>
             </div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-6">
+        <?php };?>
+        <div class="<?=$cols;?>">
           <div class="card card-stats">
             <div class="card-header card-header-danger card-header-icon">
               <div class="card-icon">
@@ -46,19 +54,19 @@
             </div>
             <div class="card-footer">
               <div class="stats">
-                <i class="material-icons">local_offer</i> Tracked from Github
+              <i class="material-icons">update</i> Just Updated
               </div>
             </div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="<?=$cols;?>">
           <div class="card card-stats">
             <div class="card-header card-header-info card-header-icon">
               <div class="card-icon">
-                <i class="fa fa-twitter"></i>
+                <i class="material-icons">fact_check</i>
               </div>
-              <p class="card-category">Followers</p>
-              <h3 class="card-title">+245</h3>
+              <p class="card-category">NILAI IKM</p>
+              <h3 class="card-title"><strong>89</strong></h3>
             </div>
             <div class="card-footer">
               <div class="stats">
@@ -68,7 +76,7 @@
           </div>
         </div>
       </div>
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-md-4">
           <div class="card card-chart">
             <div class="card-header card-header-success">
@@ -118,7 +126,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       <div class="row">
         <div class="col-lg-6 col-md-12">
           <div class="card">

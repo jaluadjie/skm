@@ -7,28 +7,24 @@ class Layanan_model extends CI_Model {
 	var $column_order = array(null,'n_satker','n_layanan','biaya','standar_waktu',null); //set column field database for datatable orderable
 	var $column_search = array('n_satker','n_layanan','biaya','standar_waktu'); //set column field database for datatable searchable just firstname , lastname , address are searchable
 	var $order = array('id_satker' => 'asc'); // default order 
-
+	
 	public function __construct()
 	{
 		parent::__construct();
 		$this->load->database();
 	}
-
+	
 	private function _get_datatables_query()
 	{
 		$session_data = $_SESSION['masuk'];
 		$hak_akses = $session_data['hak_akses'];
 		$id_satker = $session_data['id_satker'];
-		if($hak_akses == 1){
-			$this->db->select('*');
-			$this->db->from($this->table);
-			$this->db->join('tbm_satker', 'tb_layanan.id_satker = tbm_satker.id_satker');
-		}else{
-			$this->db->select('*');
-			$this->db->from($this->table);
-			$this->db->join('tbm_satker', 'tb_layanan.id_satker = tbm_satker.id_satker');
-			$this->db->where('tb_layanan.id_satker = '.$id_satker);
+		if($hak_akses == 2){
+			$this->db->where('tb_layanan.id_satker = '.$id_satker);	
 		};
+			$this->db->select('*');
+			$this->db->from($this->table);
+			$this->db->join('tbm_satker', 'tb_layanan.id_satker = tbm_satker.id_satker');
 
 		//$this->db->get();
 
@@ -94,6 +90,10 @@ class Layanan_model extends CI_Model {
 
 	public function count_all()
 	{
+		$session_data = $this->session->userdata('masuk');
+		if($session_data['hak_akses'] == 2){
+			$this->db->where('id_satker', $session_data['id_satker']);
+		}
 		$this->db->from($this->table);
 		return $this->db->count_all_results();
 	}

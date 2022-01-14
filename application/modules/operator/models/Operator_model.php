@@ -16,7 +16,12 @@ class Operator_model extends CI_Model {
 
 	private function _get_datatables_query()
 	{
-		
+		$session_data = $_SESSION['masuk'];
+		$hak_akses = $session_data['hak_akses'];
+		$id_satker = $session_data['id_satker'];
+		if($hak_akses == 2){
+			$this->db->where('tb_user.id_satker = '.$id_satker);	
+		};
 		$this->db->select('*');
 		$this->db->from($this->table);
 		$this->db->join('tbm_satker', 'tb_user.id_satker = tbm_satker.id_satker');
@@ -85,6 +90,10 @@ class Operator_model extends CI_Model {
 
 	public function count_all()
 	{
+		$session_data = $this->session->userdata('masuk');
+		if($session_data['hak_akses'] == 2){
+			$this->db->where('id_satker', $session_data['id_satker']);
+		}
 		$this->db->from($this->table);
 		return $this->db->count_all_results();
 	}

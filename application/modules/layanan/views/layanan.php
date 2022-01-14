@@ -51,7 +51,7 @@
                         <div class="col-md-10">
                             <div class="form-group">
                               <label class="label-floating">Perangkat Daerah</label>
-                                <select class="form-control" name="id_satker" id="pilih-opd">
+                              <select class="form-control" name="id_satker" id="pilih-opd">
                                   <option disabled="" selected="">Pilih Nama OPD</option>
                                     <?php foreach($satker as $row):
                                       echo "<option value=".$row->id_satker.">".$row->n_satker." </option>";
@@ -170,37 +170,37 @@ $(document).ready(function() {
 
         "dom":"Bfrtip",
         "buttons":[
-            {
-                extend:"excelHtml5",
-                className:"btn btn-sm btn-round btn-rose",
-                title:"List Layanan (Master)",
-                text:"<i class='fa fa-table' aria-hidden='true'></i>",
-                titleAttr:"Export ke Excel",
-                exportOptions:{
-                    columns:[1,2,3,4]
-                }
-            },
-            {
-                extend:"pdfHtml5",
-                className:"btn btn-sm btn-round btn-rose",
-                pageSize:"A4",
-                title:"List Layanan (Master)",
-                text:"<i class='material-icons'>picture_as_pdf</i>",
-                titleAttr:"Export ke PDF",
-                exportOptions:{
-                    columns:[1, 2, 3,4]
-                },
-                filename:"List Layanan"
-            },
-            {
-                extend:"print",
-                className:"btn btn-sm btn-round btn-rose",
-                text:"<i class='material-icons'>print</i>",
-                titleAttr:"Cetak",
-                exportOptions:{
-                    columns:[1,2,3,4]
-                },
-            },
+            // {
+            //     extend:"excelHtml5",
+            //     className:"btn btn-sm btn-round btn-rose",
+            //     title:"List Layanan (Master)",
+            //     text:"<i class='fa fa-table' aria-hidden='true'></i>",
+            //     titleAttr:"Export ke Excel",
+            //     exportOptions:{
+            //         columns:[1,2,3,4]
+            //     }
+            // },
+            // {
+            //     extend:"pdfHtml5",
+            //     className:"btn btn-sm btn-round btn-rose",
+            //     pageSize:"A4",
+            //     title:"List Layanan (Master)",
+            //     text:"<i class='material-icons'>picture_as_pdf</i>",
+            //     titleAttr:"Export ke PDF",
+            //     exportOptions:{
+            //         columns:[1, 2, 3,4]
+            //     },
+            //     filename:"List Layanan"
+            // },
+            // {
+            //     extend:"print",
+            //     className:"btn btn-sm btn-round btn-rose",
+            //     text:"<i class='material-icons'>print</i>",
+            //     titleAttr:"Cetak",
+            //     exportOptions:{
+            //         columns:[1,2,3,4]
+            //     },
+            // },
             "reload"
         ],
         "pageLength":10,

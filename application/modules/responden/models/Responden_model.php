@@ -16,7 +16,12 @@ class Responden_model extends CI_Model {
 
 	private function _get_datatables_query()
 	{
-		
+		$session_data = $_SESSION['masuk'];
+		$hak_akses = $session_data['hak_akses'];
+		$id_satker = $session_data['id_satker'];
+		if($hak_akses == 2){
+			$this->db->where('tb_responden.id_satker = '.$id_satker);	
+		};
 		$this->db->select('*');
 		$this->db->from($this->table);
 		$this->db->join('tbm_pendidikan', 'tb_responden.id_pendidikan = tbm_pendidikan.id_pendidikan');
@@ -83,6 +88,14 @@ class Responden_model extends CI_Model {
 			$select = $this->table.'.jk';
 			$count_group_by = $this->table.'.jk';
 		}
+
+		$session_data = $_SESSION['masuk'];
+		$hak_akses = $session_data['hak_akses'];
+		$id_satker = $session_data['id_satker'];
+		if($hak_akses == 2){
+			$this->db->where('tb_responden.id_satker = '.$id_satker);	
+		};
+
 		$this->db->select($select.' as nama, COUNT('.$count_group_by.') as jumlah');
 		$this->db->group_by($count_group_by);
 		$this->db->from($this->table);
@@ -127,6 +140,10 @@ class Responden_model extends CI_Model {
 
 	public function count_all()
 	{
+		$session_data = $this->session->userdata('masuk');
+		if($session_data['hak_akses'] == 2){
+			$this->db->where('id_satker', $session_data['id_satker']);
+		}
 		$this->db->from($this->table);
 		return $this->db->count_all_results();
 	}

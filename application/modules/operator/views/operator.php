@@ -161,37 +161,37 @@ $(document).ready(function() {
 
         "dom":"Bfrtip",
         "buttons":[
-            {
-                extend:"excelHtml5",
-                className:"btn btn-sm btn-round btn-rose",
-                title:"List Barang (Master)",
-                text:"<i class='fa fa-table' aria-hidden='true'></i>",
-                titleAttr:"Export ke Excel",
-                exportOptions:{
-                    columns:[1,2,3]
-                }
-            },
-            {
-                extend:"pdfHtml5",
-                className:"btn btn-sm btn-round btn-rose",
-                pageSize:"A4",
-                title:"List Operator (Master)",
-                text:"<i class='material-icons'>picture_as_pdf</i>",
-                titleAttr:"Export ke PDF",
-                exportOptions:{
-                    columns:[1, 2, 3]
-                },
-                filename:"List Barang"
-            },
-            {
-                extend:"print",
-                className:"btn btn-sm btn-round btn-rose",
-                text:"<i class='material-icons'>print</i>",
-                titleAttr:"Cetak",
-                exportOptions:{
-                    columns:[1,2,3]
-                },
-            },
+            // {
+            //     extend:"excelHtml5",
+            //     className:"btn btn-sm btn-round btn-rose",
+            //     title:"List Barang (Master)",
+            //     text:"<i class='fa fa-table' aria-hidden='true'></i>",
+            //     titleAttr:"Export ke Excel",
+            //     exportOptions:{
+            //         columns:[1,2,3]
+            //     }
+            // },
+            // {
+            //     extend:"pdfHtml5",
+            //     className:"btn btn-sm btn-round btn-rose",
+            //     pageSize:"A4",
+            //     title:"List Operator (Master)",
+            //     text:"<i class='material-icons'>picture_as_pdf</i>",
+            //     titleAttr:"Export ke PDF",
+            //     exportOptions:{
+            //         columns:[1, 2, 3]
+            //     },
+            //     filename:"List Barang"
+            // },
+            // {
+            //     extend:"print",
+            //     className:"btn btn-sm btn-round btn-rose",
+            //     text:"<i class='material-icons'>print</i>",
+            //     titleAttr:"Cetak",
+            //     exportOptions:{
+            //         columns:[1,2,3]
+            //     },
+            // },
             "reload"
         ],
         "pageLength":5,

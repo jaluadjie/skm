@@ -42,8 +42,8 @@ class Layanan extends CI_Controller {
 			
 
 			//add html for action
-			$row[] = '<div class="btn-group"><a class="btn btn-sm btn-round btn-warning" href="javascript:void(0)" title="Edit" onclick="edit_('."'".$layanan->id_layanan."'".')"><i class="material-icons">edit</i></a>
-				  <a class="btn btn-sm btn-round btn-danger" href="javascript:void(0)" title="Hapus" onclick="delete_('."'".$layanan->id_layanan."'".')"><i class="material-icons">delete</i></div>';
+			$row[] = '<div class="btn-group"><a class="btn btn-sm btn-round btn-warning" rel="tooltip" href="javascript:void(0)" title="Edit" onclick="edit_('."'".$layanan->id_layanan."'".')"><i class="material-icons">edit</i></a>
+				  <a class="btn btn-sm btn-round btn-danger" rel="tooltip" href="javascript:void(0)" title="Hapus" onclick="delete_('."'".$layanan->id_layanan."'".')"><i class="material-icons">close</i></a></div>';
 		
 			$data[] = $row;
 		}

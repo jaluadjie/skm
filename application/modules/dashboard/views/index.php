@@ -123,7 +123,8 @@ The above copyright notice and this permission notice shall be included in all c
                 </button>
             </div>
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="javascript:;">Hai <?=$uname;?></a>
+            <a class="navbar-brand" href="javascript:;">Hai <?php echo $uname.'. Anda berperan sebagai '.$n_hak_akses.' pada '.$satker->n_satker;?>  
+            </a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -192,22 +193,6 @@ The above copyright notice and this permission notice shall be included in all c
 
             <footer class="footer">
         <div class="container-fluid">
-          <nav class="float-left">
-            <ul>
-              <li>
-                <a href="https://www.creative-tim.com">Creative Tim</a>
-              </li>
-              <li>
-                <a href="https://creative-tim.com/presentation">About Us</a>
-              </li>
-              <li>
-                <a href="http://blog.creative-tim.com">Blog</a>
-              </li>
-              <li>
-                <a href="https://www.creative-tim.com/license">Licenses</a>
-              </li>
-            </ul>
-          </nav>
           <div class="copyright float-right">
           <a href="http://biroorganisasi.kalbarprov.go.id">Biro Organisasi Setda Prov. Kalbar</a>
             &copy;
