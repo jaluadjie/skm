@@ -14,8 +14,8 @@ The above copyright notice and this permission notice shall be included in all c
 
 <head>
   <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76" href="<?=base_url('assets/img/apple-icon.png');?>">
-  <link rel="icon" type="image/png" href="<?=base_url('assets/img/favicon.png');?>">
+  <link rel="apple-touch-icon" sizes="76x76" href="<?= base_url('assets/img/apple-icon.png'); ?>">
+  <link rel="icon" type="image/png" href="<?= base_url('assets/img/favicon.png'); ?>">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
     Dashboard Sekam Padi Pemerintah Prov. Kalbar
@@ -25,28 +25,28 @@ The above copyright notice and this permission notice shall be included in all c
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- CSS Files -->
-  <link href="<?=base_url('assets/dashboard/css/material-dashboard.css?v=2.1.2');?>" rel="stylesheet" />
+  <link href="<?= base_url('assets/dashboard/css/material-dashboard.css?v=2.1.2'); ?>" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap5.min.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
-  <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="<?=base_url('assets/dashboard/demo/demo.css');?>" rel="stylesheet" />
+
+
 </head>
 
 <body class="">
   <div class="wrapper ">
-    <div class="sidebar" data-color="orange" data-background-color="white" data-image="<?=base_url('assets/dashboard/img/sidebar-1.jpg');?>">
+    <div class="sidebar" data-color="orange" data-background-color="white" data-image="<?= base_url('assets/dashboard/img/sidebar-1.jpg'); ?>">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
         Tip 2: you can also add an image using data-image tag
     -->
       <div class="logo"><a href="#" class="simple-text logo-normal">
-          <img src="<?=base_url('assets/img/sekam-padi.png');?>" alt="Sekam Padi" width="225">
+          <img src="<?= base_url('assets/img/sekam-padi.png'); ?>" alt="Sekam Padi" width="225">
         </a></div>
-      
-      <!-- Menu Sidebar -->      
-        <div class="sidebar-wrapper">
+
+      <!-- Menu Sidebar -->
+      <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="nav-item active">
             <a class="nav-link klik_menu" id="dashboard" href="#dashboard">
@@ -56,74 +56,74 @@ The above copyright notice and this permission notice shall be included in all c
           </li>
           <li class="nav-item">
             <a data-toggle="collapse" href="#pagesMaster" class="nav-link">
-                <i class="material-icons">grid_on</i>
-                <p>Tabel Master
-                  <b class="caret"></b>
-                </p>
+              <i class="material-icons">grid_on</i>
+              <p>Tabel Master
+                <b class="caret"></b>
+              </p>
             </a>
             <div class="collapse" id="pagesMaster">
-                <ul class="nav" style="padding-left: 15px;">
-                  <li class="nav-item">
-                    <a class="nav-link klik_menu" id="operator" href="#operator">
-                      <i class="material-icons">account_box</i>Operator
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link klik_menu" id="layanan" href="#layanan">
-                      <i class="material-icons">local_offer</i>Layanan
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link klik_menu" id="pertanyaan" href="#pertanyaan">
-                      <i class="material-icons">quiz</i>Pertanyaan
-                    </a>
-                  </li>
-                </ul>
+              <ul class="nav" style="padding-left: 15px;">
+                <li class="nav-item">
+                  <a class="nav-link klik_menu" id="operator" href="#operator">
+                    <i class="material-icons">account_box</i>Operator
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link klik_menu" id="layanan" href="#layanan">
+                    <i class="material-icons">local_offer</i>Layanan
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link klik_menu" id="pertanyaan" href="#pertanyaan">
+                    <i class="material-icons">quiz</i>Pertanyaan
+                  </a>
+                </li>
+              </ul>
             </div>
-        </li>
+          </li>
           <li class="nav-item">
             <a data-toggle="collapse" href="#pagesSurvey" class="nav-link">
-                <i class="material-icons">content_paste</i>
-                <p>Moderasi
-                  <b class="caret"></b>
-                </p>
+              <i class="material-icons">content_paste</i>
+              <p>Moderasi
+                <b class="caret"></b>
+              </p>
             </a>
             <div class="collapse" id="pagesSurvey">
-                <ul class="nav" style="padding-left: 15px;">
+              <ul class="nav" style="padding-left: 15px;">
                 <li class="nav-item ">
                   <a class="nav-link klik_menu" id="responden" href="#responden">
                     <i class="material-icons">people_outline</i>Responden
                   </a>
                 </li>
-                  <li class="nav-item">
-                    <a class="nav-link klik_menu" id="penilaian" href="#penilaian">
-                      <i class="material-icons">poll</i>Penilaian
-                    </a>
-                  </li>
-                </ul>
+                <li class="nav-item">
+                  <a class="nav-link klik_menu" id="penilaian" href="#penilaian">
+                    <i class="material-icons">poll</i>Penilaian
+                  </a>
+                </li>
+              </ul>
             </div>
-            <li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link klik_menu" id="report" href="#report">
               <i class="material-icons">summarize</i>
               <p>Laporan</p>
             </a>
           </li>
-        </li>
-        </ul> 
+          </li>
+        </ul>
       </div>
     </div>
     <div class="main-panel">
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
-            <div class="navbar-minimize">
-                <button id="minimizeSidebar" class="btn btn-round btn-white btn-fill btn-just-icon">
-                    <i class="material-icons visible-on-sidebar-regular">more_vert</i>
-                    <i class="material-icons visible-on-sidebar-mini">view_list</i>
-                </button>
-            </div>
+          <div class="navbar-minimize">
+            <button id="minimizeSidebar" class="btn btn-round btn-white btn-fill btn-just-icon">
+              <i class="material-icons visible-on-sidebar-regular">more_vert</i>
+              <i class="material-icons visible-on-sidebar-mini">view_list</i>
+            </button>
+          </div>
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="javascript:;">Hai <?php echo $uname.'. Anda berperan sebagai '.$n_hak_akses.' pada '.$satker->n_satker;?>  
+            <a class="navbar-brand" href="javascript:;">Hai <?php echo $uname . '. Anda berperan sebagai ' . $n_hak_akses . ' pada ' . $satker->n_satker ?>
             </a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -178,7 +178,7 @@ The above copyright notice and this permission notice shall be included in all c
                   <a class="dropdown-item" href="#">Profile</a>
                   <a class="dropdown-item" href="#">Settings</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="<?=base_url('login/logout');?>">Log out</a>
+                  <a class="dropdown-item" href="<?= base_url('login/logout'); ?>">Log out</a>
                 </div>
               </li>
             </ul>
@@ -187,14 +187,14 @@ The above copyright notice and this permission notice shall be included in all c
       </nav>
       <!-- End Navbar -->
 
-            <div class="content">
-                <!-- inject html disini -->
-            </div>
+      <div class="content">
+        <!-- inject html disini -->
+      </div>
 
-            <footer class="footer">
+      <footer class="footer">
         <div class="container-fluid">
           <div class="copyright float-right">
-          <a href="http://biroorganisasi.kalbarprov.go.id">Biro Organisasi Setda Prov. Kalbar</a>
+            <a href="http://biroorganisasi.kalbarprov.go.id">Biro Organisasi Setda Prov. Kalbar</a>
             &copy;
             <script>
               document.write(new Date().getFullYear())
@@ -205,81 +205,82 @@ The above copyright notice and this permission notice shall be included in all c
     </div>
   </div>
   <!--   Core JS Files   -->
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.2.2/dist/echarts.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-  <script src="<?=base_url('assets/dashboard/js/core/popper.min.js');?>"></script>
-  <script src="<?=base_url('assets/dashboard/js/core/bootstrap-material-design.min.js');?>"></script>
-  <script src="<?=base_url('assets/dashboard/js/plugins/perfect-scrollbar.jquery.min.js');?>"></script>
+  <script src="<?= base_url('assets/dashboard/js/core/popper.min.js'); ?>"></script>
+  <script src="<?= base_url('assets/dashboard/js/core/bootstrap-material-design.min.js'); ?>"></script>
+  <script src="<?= base_url('assets/dashboard/js/plugins/perfect-scrollbar.jquery.min.js'); ?>"></script>
   <!-- Plugin for the momentJs  -->
-  <script src="<?=base_url('assets/dashboard/js/plugins/moment.min.js');?>"></script>
+  <script src="<?= base_url('assets/dashboard/js/plugins/moment.min.js'); ?>"></script>
   <!--  Plugin for Sweet Alert -->
-  <script src="<?=base_url('assets/dashboard/js/plugins/sweetalert2.js');?>"></script>
+  <script src="<?= base_url('assets/dashboard/js/plugins/sweetalert2.js'); ?>"></script>
   <!-- Forms Validations Plugin -->
-  <script src="<?=base_url('assets/dashboard/js/plugins/jquery.validate.min.js');?>"></script>
+  <script src="<?= base_url('assets/dashboard/js/plugins/jquery.validate.min.js'); ?>"></script>
   <!-- Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
-  <script src="<?=base_url('assets/dashboard/js/plugins/jquery.bootstrap-wizard.js');?>"></script>
+  <script src="<?= base_url('assets/dashboard/js/plugins/jquery.bootstrap-wizard.js'); ?>"></script>
   <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
-  <script src="<?=base_url('assets/dashboard/js/plugins/bootstrap-selectpicker.js');?>"></script>
+  <script src="<?= base_url('assets/dashboard/js/plugins/bootstrap-selectpicker.js'); ?>"></script>
   <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
-  <script src="<?=base_url('assets/dashboard/js/plugins/bootstrap-datetimepicker.min.js');?>"></script>
+  <script src="<?= base_url('assets/dashboard/js/plugins/bootstrap-datetimepicker.min.js'); ?>"></script>
   <!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
-  <script src="<?=base_url('assets/dashboard/js/plugins/jquery.dataTables.min.js');?>"></script>
+  <script src="<?= base_url('assets/dashboard/js/plugins/jquery.dataTables.min.js'); ?>"></script>
   <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
-  <script src="<?=base_url('assets/dashboard/js/plugins/bootstrap-tagsinput.js');?>"></script>
+  <script src="<?= base_url('assets/dashboard/js/plugins/bootstrap-tagsinput.js'); ?>"></script>
   <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
-  <script src="<?=base_url('assets/dashboard/js/plugins/jasny-bootstrap.min.js');?>"></script>
+  <script src="<?= base_url('assets/dashboard/js/plugins/jasny-bootstrap.min.js'); ?>"></script>
   <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
-  <script src="<?=base_url('assets/dashboard/js/plugins/fullcalendar.min.js');?>"></script>
+  <script src="<?= base_url('assets/dashboard/js/plugins/fullcalendar.min.js'); ?>"></script>
   <!-- Vector Map plugin, full documentation here: http://jvectormap.com/documentation/ -->
-  <script src="<?=base_url('assets/dashboard/js/plugins/jquery-jvectormap.js');?>"></script>
+  <script src="<?= base_url('assets/dashboard/js/plugins/jquery-jvectormap.js'); ?>"></script>
   <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-  <script src="<?=base_url('assets/dashboard/js/plugins/nouislider.min.js');?>"></script>
+  <script src="<?= base_url('assets/dashboard/js/plugins/nouislider.min.js'); ?>"></script>
   <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
   <!-- Library for adding dinamically elements -->
-  <script src="<?=base_url('assets/dashboard/js/plugins/arrive.min.js');?>"></script>
+  <script src="<?= base_url('assets/dashboard/js/plugins/arrive.min.js'); ?>"></script>
   <!-- Chartist JS -->
-  <script src="<?=base_url('assets/dashboard/js/plugins/chartist.min.js');?>"></script>
+  <script src="<?= base_url('assets/dashboard/js/plugins/chartist.min.js'); ?>"></script>
   <!--  Notifications Plugin    -->
-  <script src="<?=base_url('assets/dashboard/js/plugins/bootstrap-notify.js');?>"></script>
+  <script src="<?= base_url('assets/dashboard/js/plugins/bootstrap-notify.js'); ?>"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="<?=base_url('assets/dashboard/js/material-dashboard.js?v=2.1.2');?>" type="text/javascript"></script>
+  <script src="<?= base_url('assets/dashboard/js/material-dashboard.js?v=2.1.2'); ?>" type="text/javascript"></script>
   <!-- Select2 -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js'></script>
-  
+
   <script type="text/javascript">
     $(document).ready(function() {
-        $(".klik_menu").click(function(){
+      $(".klik_menu").click(function() {
         var menu = $(this).attr("id");
-        if(menu == ''){
-            loading();
-            $('.content').load("<?=base_url('dashboard');?>");           
+        if (menu == '') {
+          loading();
+          $('.content').load("<?= base_url('dashboard'); ?>");
+        } else {
+          loading();
+          $('.content').load('<?= base_url(); ?>' + menu);
+          $('li.nav-item').removeClass("active");
+          $(this).parent().addClass("active");
         }
-        else {
-            loading();
-            $('.content').load('<?=base_url();?>'+menu);
-            $('li.nav-item').removeClass("active");
-            $(this).parent().addClass("active");
-        }
-        
+
+      });
+
+      //load page awal
+      $('.content').load("<?= base_url('dashboard'); ?>");
+
+      //active menu sidebar
+      // $('ul li a.klik_menu').click(function(){
+      // $('li.nav-item').removeClass("active");
+      // $(this).parent().addClass("active");
+      // });
+
     });
 
-        //load page awal
-        $('.content').load("<?php echo base_url('dashboard');?>");
-
-        //active menu sidebar
-        // $('ul li a.klik_menu').click(function(){
-        // $('li.nav-item').removeClass("active");
-        // $(this).parent().addClass("active");
-    // });
-
-    });
-
-    function loading(){
-    $(".content").html('<center><img src="<?php echo base_url('assets/images/loader.gif');?>"/><i> loading page ...</i></center>');
-    $(".content").hide();
-    $(".content").fadeIn("slow");
-  };
-</script>
+    function loading() {
+      $(".content").html('<center><img src="<?= base_url('assets/images/loader.gif'); ?>"/><i> loading page ...</i></center>');
+      $(".content").hide();
+      $(".content").fadeIn("slow");
+    };
+  </script>
 </body>
 
 </html>

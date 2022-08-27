@@ -166,7 +166,7 @@ class Responden extends CI_Controller {
 
 	function chart_responden(){
 		$data['title'] = 'Chart Responden';
-		$data['subcategory'] = 'Data Responden berdasarkan jenis kelamin, pendidikan dan pekerjaan';
+		$data['subcategory'] = 'Data Responden berdasarkan jenis kelamin, pendidikan, pekerjaan dan rentang usia';
 		$this->load->view('chart_responden',$data);
 	}
 	function coba_chart(){

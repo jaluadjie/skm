@@ -461,7 +461,7 @@ h2.title {
   width: 100%;
 }
 .wizard-card .tab-content {
-  min-height: 340px;
+  min-height: 140px;
   padding: 20px 15px;
 }
 .wizard-card .wizard-footer {
@@ -1486,7 +1486,7 @@ select.form-control[multiple], .form-group.is-focused select.form-control[multip
   color: #FFFFFF;
   z-index: 4;
   text-align: right;
-  margin-top: 60px;
+  margin-top: 25px;
   text-shadow: 0 0px 1px black;
 }
 .footer a {

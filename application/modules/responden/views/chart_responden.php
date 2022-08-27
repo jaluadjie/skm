@@ -1,6 +1,6 @@
 <html>
     <head>
-        <script src="https://www.gstatic.com/charts/loader.js"></script>
+        <!-- <script src="https://www.gstatic.com/charts/loader.js"></script> -->
         <script type="text/javascript"> //Menampilkan Chart Responden berdasarkan JK
             $(document).ready(function() {
                 $.ajax({

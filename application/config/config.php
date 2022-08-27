@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 |--------------------------------------------------------------------------
@@ -24,14 +24,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 
-if(isset($_SERVER['HTTPS'])) { $protocol = 'https://'; }
-    else {$protocol = 'http://'; }
-        
+if (isset($_SERVER['HTTPS'])) {
+    $protocol = 'https://';
+} else {
+    $protocol = 'http://';
+}
+
 // set protocol and host
 $root = $protocol . $_SERVER['HTTP_HOST'];
 
 // $_SERVER['SCRIPT_NAME'] is /subdirs/index.php, basename($_SERVER['SCRIPT_NAME'] is index.php -> replace to get subdirs and append to root
-$root .= str_replace(basename($_SERVER['SCRIPT_NAME']),'',$_SERVER['SCRIPT_NAME']);
+$root .= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
 $config['base_url'] = $root;
 
 /*
@@ -61,7 +64,7 @@ $config['index_page'] = '';
 |
 | WARNING: If you set this to 'PATH_INFO', URIs will always be URL-decoded!
 */
-$config['uri_protocol']	= 'REQUEST_URI';
+$config['uri_protocol']    = 'REQUEST_URI';
 
 /*
 |--------------------------------------------------------------------------
@@ -85,7 +88,7 @@ $config['url_suffix'] = '';
 | than english.
 |
 */
-$config['language']	= 'english';
+$config['language']    = 'english';
 
 /*
 |--------------------------------------------------------------------------
@@ -167,7 +170,7 @@ $config['composer_autoload'] = FALSE;
 | DO NOT CHANGE THIS UNLESS YOU FULLY UNDERSTAND THE REPERCUSSIONS!!
 |
 */
-$config['permitted_uri_chars'] = 'a-z 0-9~%.:_\-';
+$config['permitted_uri_chars'] = 'a-z 0-9~%.:_\-@\=';
 
 /*
 |--------------------------------------------------------------------------
@@ -333,7 +336,7 @@ $config['cache_query_string'] = FALSE;
 | https://codeigniter.com/user_guide/libraries/encryption.html
 |
 */
-$config['encryption_key'] = 'coba_enkripsi';
+$config['encryption_key'] = 'tUk1n_j3laT4';
 
 /*
 |--------------------------------------------------------------------------
@@ -409,11 +412,11 @@ $config['sess_regenerate_destroy'] = FALSE;
 |       'cookie_httponly') will also affect sessions.
 |
 */
-$config['cookie_prefix']	= '';
-$config['cookie_domain']	= '';
-$config['cookie_path']		= '/';
-$config['cookie_secure']	= FALSE;
-$config['cookie_httponly'] 	= FALSE;
+$config['cookie_prefix']    = '';
+$config['cookie_domain']    = '';
+$config['cookie_path']        = '/';
+$config['cookie_secure']    = FALSE;
+$config['cookie_httponly']     = FALSE;
 
 /*
 |--------------------------------------------------------------------------

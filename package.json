@@ -1,0 +1,25 @@
+{
+  "name": "skm",
+  "version": "1.0.0",
+  "description": "Aplikasi Survey Kepuasan Masyarakat",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaluadjie/skm.git"
+  },
+  "keywords": [
+    "skm"
+  ],
+  "author": "jaluadjie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaluadjie/skm/issues"
+  },
+  "homepage": "https://github.com/jaluadjie/skm#readme",
+  "dependencies": {
+    "echarts": "^5.2.2"
+  }
+}
