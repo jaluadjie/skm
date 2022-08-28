@@ -39,6 +39,7 @@
       </div>
       <div class="modal-body form">
         <form action="#" id="form" class="form-horizontal form-label-left">
+          <input type="hidden" class="txt_csrfname" name="<?= $this->security->get_csrf_token_name(); ?>" value="<?= $this->security->get_csrf_hash(); ?>" style="display: none">
           <input type="hidden" value="" name="id" />
           <div class="card">
             <div class="card-header card-header-primary">
@@ -116,6 +117,7 @@
 <script type="text/javascript">
   var save_method; //for save method string
   var table;
+  var token = "<?php echo $this->security->get_csrf_hash(); ?>";
 
   $(document).ready(function() {
 
@@ -154,7 +156,10 @@
       // Load data for the table's content from an Ajax source
       "ajax": {
         "url": "<?php echo site_url('operator/ajax_list') ?>",
-        "type": "POST"
+        "type": "POST",
+        "data": function(d) {
+          d.<?php echo $this->security->get_csrf_token_name(); ?> = token;
+        }
       },
 
       "dom": "Bfrtip",
@@ -203,6 +208,11 @@
         var index = page * length + (iDisplayIndex + 1);
         $('td:eq(0)', row).html(index);
       }
+    });
+
+    // csrf datatable
+    table.on('xhr.dt', function(e, settings, json, xhr) {
+      token = json.<?= $this->security->get_csrf_token_name(); ?>;
     });
 
     //set input/textarea/select event when change value, remove class error and remove text help block 

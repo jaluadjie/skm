@@ -155,7 +155,7 @@
         $('#test-layanan').show('slow');
         var ids = $(this).val();
         var csrfName = $('.txt_csrfname').attr('name');
-        var csrfHash = $('.txt_csrfname').val();;
+        var csrfHash = $('.txt_csrfname').val();
         $.ajax({
           url: "<?php echo site_url('frontpage/get_layanan_by_id'); ?>",
           method: "POST",
