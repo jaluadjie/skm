@@ -64,6 +64,7 @@
                                 <i class="material-icons">business</i>
                               </span>
                               <div class="form-group label-floating">
+                                <input type="hidden" class="txt_csrfname" name="<?= $this->security->get_csrf_token_name(); ?>" value="<?= $this->security->get_csrf_hash(); ?>" style="display: none">
                                 <label for="pilih-opd" class="control-label">Nama Perangkat Daerah </label>
                                 <select class="form-select" name="opd" id="pilih-opd" style="width: 100%;">
                                   <option disabled selected>Silahkan Pilih Nama OPD</option>
@@ -153,11 +154,14 @@
       $('#pilih-opd').select2().change(function() {
         $('#test-layanan').show('slow');
         var ids = $(this).val();
+        var csrfName = $('.txt_csrfname').attr('name');
+        var csrfHash = $('.txt_csrfname').val();;
         $.ajax({
           url: "<?php echo site_url('frontpage/get_layanan_by_id'); ?>",
           method: "POST",
           data: {
-            id: ids
+            id: ids,
+            [csrfName]: csrfHash
           },
           async: true,
           dataType: 'json',
