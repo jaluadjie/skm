@@ -9,11 +9,14 @@ class Dashboard extends CI_Controller
 		parent::__construct();
 		$this->load->helper('url');
 		if (!$this->session->userdata('masuk')) {
-			redirect('login');
+			$url = base_url('login');
+			redirect($url);
 		}
 		$this->load->model('responden/responden_model', 'm_resp');
 		$this->load->model('satker_model', 'm_satker');
 		$this->load->model('layanan/layanan_model', 'm_layanan');
+		$this->load->library('secure');
+		$this->load->helper('form');
 		//$this->load->model('user_model','user');
 	}
 
@@ -21,6 +24,7 @@ class Dashboard extends CI_Controller
 	{
 		$session_data = $this->session->userdata('masuk');
 		$data['hak_akses'] = $session_data['hak_akses'];
+		$data['id_satker'] = $session_data['id_satker'];
 		$data['jml_responden'] = $this->m_resp->count_all();
 		$data['jml_satker'] = $this->m_satker->count_all();
 		$data['jml_layanan'] = $this->m_layanan->count_all();

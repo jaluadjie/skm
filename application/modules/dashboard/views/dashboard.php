@@ -18,7 +18,7 @@
         </div>
         <div class="card-footer">
           <div class="stats">
-            <i class="material-icons">update</i> Just Updated
+            <a href="#" class="klik-menu"></a> <i class="material-icons">update</i> Just Updated
           </div>
         </div>
       </div>
@@ -77,7 +77,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-8">
       <div class="card">
         <div class="card-header card-header-info">
           <h4 class="card-title ">Chart Responden</h4>
@@ -85,6 +85,18 @@
         </div>
         <div class="card-body table-responsive">
           <div id="main" style="width:100% ;height:450px"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <!-- <div class="card-header card-header-warning">
+          <h4 class="card-title ">Laman Survey</h4>
+        </div> -->
+        <div class="card-body table-responsive">
+          <a href="<?= base_url('survey/show_survey_opd/' . $this->secure->encrypt_url($id_satker)) ?>" target="_blank" class="btn btn-primary pull-right">Laman Survey</a>
+          <a href="<?= base_url('survey/cetak_qr/' . $this->secure->encrypt_url($id_satker)) ?>" target="_blank" class="btn btn-warning pull-left">Cetak QR Code</a>
+
         </div>
       </div>
     </div>
@@ -198,16 +210,20 @@
         },
         option: {
           series: [{
-              center: ['25%', '30%']
+              center: ['25%', '30%'],
+              radius: 80
             },
             {
-              center: ['75%', '30%']
+              center: ['75%', '30%'],
+              radius: 80
             },
             {
-              center: ['25%', '75%']
+              center: ['25%', '75%'],
+              radius: 80
             },
             {
-              center: ['75%', '75%']
+              center: ['75%', '75%'],
+              radius: 80
             }
           ]
         }
@@ -215,16 +231,20 @@
       {
         option: {
           series: [{
-              center: ['50%', '20%']
+              center: ['50%', '15%'],
+              radius: 40
             },
             {
-              center: ['50%', '40%']
+              center: ['50%', '40%'],
+              radius: 40
             },
             {
-              center: ['50%', '60%']
+              center: ['50%', '65%'],
+              radius: 40
             },
             {
-              center: ['50%', '80%']
+              center: ['50%', '90%'],
+              radius: 40
             }
           ]
         }

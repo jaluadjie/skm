@@ -41,182 +41,183 @@
                             <img src="<?= base_url('assets/img/brand-kalbar.png'); ?>" alt="Brand Kalbar" width="15%"><br><br>
                         </div>
                         <div class="card wizard-card" data-color="blue" id="wizard">
-                            <form action="#" id="form_survey">
-                                <input type="hidden" name="id_satker" value="<?= $satker['id_satker']; ?>">
-                                <input type="hidden" name="id_layanan" value="<?= $layanan['id_layanan']; ?>">
-                                <!--        You can switch " data-color="rose" "  with one of the next bright colors: "blue", "green", "orange", "purple"        -->
+                            <!-- <form action="#" id="form_survey"> -->
+                            <?= form_open('#', 'id="form_survey"'); ?>
+                            <input type="hidden" name="id_satker" value="<?= $satker['id_satker']; ?>">
+                            <input type="hidden" name="id_layanan" value="<?= $layanan['id_layanan']; ?>">
+                            <!--        You can switch " data-color="rose" "  with one of the next bright colors: "blue", "green", "orange", "purple"        -->
 
-                                <div class="wizard-header img-responsive">
-                                    <img src="<?= base_url('assets/img/sekam-padi.png'); ?>" alt="Sekam Padi" width="40%">
-                                    <h3 class="wizard-title"><?= $satker['n_satker']; ?></h3>
-                                    <h5 class="text-center">Jenis pelayanan yang diterima: <strong><?= $layanan['n_layanan']; ?></strong></h5>
-                                </div>
-                                <div class="wizard-navigation">
-                                    <ul>
-                                        <li><a href="#responden" data-toggle="tab">Responden</a></li>
-                                        <li><a href="#penilaianUmum" data-toggle="tab">Penilaian Umum</a></li>
-                                        <li><a href="#survey" data-toggle="tab">SKM</a></li>
-                                        <li><a href="#saran" data-toggle="tab">Kritik/Saran</a></li>
-                                    </ul>
-                                </div>
+                            <div class="wizard-header img-responsive">
+                                <img src="<?= base_url('assets/img/sekam-padi.png'); ?>" alt="Sekam Padi" width="40%">
+                                <h3 class="wizard-title"><?= $satker['n_satker']; ?></h3>
+                                <h5 class="text-center">Jenis pelayanan yang diterima: <strong><?= $layanan['n_layanan']; ?></strong></h5>
+                            </div>
+                            <div class="wizard-navigation">
+                                <ul>
+                                    <li><a href="#responden" data-toggle="tab">Responden</a></li>
+                                    <li><a href="#penilaianUmum" data-toggle="tab">Penilaian Umum</a></li>
+                                    <li><a href="#survey" data-toggle="tab">SKM</a></li>
+                                    <li><a href="#saran" data-toggle="tab">Kritik/Saran</a></li>
+                                </ul>
+                            </div>
 
-                                <div class="tab-content">
-                                    <div class="tab-pane" id="responden">
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <h4 class="info-text">Mari mulai dengan hal mendasar.</h4>
+                            <div class="tab-content">
+                                <div class="tab-pane" id="responden">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <h4 class="info-text">Mari mulai dengan hal mendasar.</h4>
+                                        </div>
+                                        <div class="col-sm-5 col-sm-offset-1">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Berapa usia anda?</label>
+                                                <input name="umur" type="number" class="form-control" min="16" max="100" required>
                                             </div>
-                                            <div class="col-sm-5 col-sm-offset-1">
-                                                <div class="form-group label-floating">
-                                                    <label class="control-label">Berapa usia anda?</label>
-                                                    <input name="umur" type="number" class="form-control" min="16" max="100" required>
-                                                </div>
+                                        </div>
+                                        <div class="col-sm-5">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Apa jenis kelamin anda?</label>
+                                                <select class="form-control" name="jk" required>
+                                                    <option disabled="" selected=""></option>
+                                                    <option value="lk"> Laki-Laki </option>
+                                                    <option value="pr"> Perempuan </option>
+                                                </select>
                                             </div>
-                                            <div class="col-sm-5">
-                                                <div class="form-group label-floating">
-                                                    <label class="control-label">Apa jenis kelamin anda?</label>
-                                                    <select class="form-control" name="jk" required>
-                                                        <option disabled="" selected=""></option>
-                                                        <option value="lk"> Laki-Laki </option>
-                                                        <option value="pr"> Perempuan </option>
-                                                    </select>
-                                                </div>
+                                        </div>
+                                        <div class="col-sm-5 col-sm-offset-1">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Apa pendidikan terakhir anda?</label>
+                                                <select class="form-control" name="pendidikan" required>
+                                                    <option disabled="" selected=""></option>
+                                                    <?php foreach ($pendidikan as $row) :
+                                                        echo "<option value=" . $row->id_pendidikan . ">" . $row->n_pendidikan . " </option>";
+                                                    endforeach;
+                                                    ?>
+                                                </select>
                                             </div>
-                                            <div class="col-sm-5 col-sm-offset-1">
-                                                <div class="form-group label-floating">
-                                                    <label class="control-label">Apa pendidikan terakhir anda?</label>
-                                                    <select class="form-control" name="pendidikan" required>
-                                                        <option disabled="" selected=""></option>
-                                                        <?php foreach ($pendidikan as $row) :
-                                                            echo "<option value=" . $row->id_pendidikan . ">" . $row->n_pendidikan . " </option>";
-                                                        endforeach;
-                                                        ?>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-5">
-                                                <div class="form-group label-floating">
-                                                    <label class="control-label">Apa pekerjaan anda?</label>
-                                                    <select class="form-control" name="pekerjaan" required>
-                                                        <option disabled="" selected=""></option>
-                                                        <?php foreach ($pekerjaan as $row) :
-                                                            echo "<option value=" . $row->id_pekerjaan . ">" . $row->n_pekerjaan . " </option>";
-                                                        endforeach;
-                                                        ?>
-                                                    </select>
-                                                </div>
+                                        </div>
+                                        <div class="col-sm-5">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Apa pekerjaan anda?</label>
+                                                <select class="form-control" name="pekerjaan" required>
+                                                    <option disabled="" selected=""></option>
+                                                    <?php foreach ($pekerjaan as $row) :
+                                                        echo "<option value=" . $row->id_pekerjaan . ">" . $row->n_pekerjaan . " </option>";
+                                                    endforeach;
+                                                    ?>
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="tab-pane" id="penilaianUmum">
-                                        <h4 class="info-text">Bagaimana penilaian Anda terhadap pelayanan kami secara umum? </h4>
-                                        <div class="row">
-                                            <div class="col-sm-12 col-sm-offset-3 form-group">
-                                                <?php
-                                                foreach ($penilaian_umum as $row) {
-                                                    switch ($row['bobot_nilai']) {
-                                                        case 4:
-                                                            $title = "Jika anda sangat puas dengan pelayanan kami";
-                                                            // $icons = "sentiment_very_satisfied";
-                                                            $icons = "grinning-face-with-big-eyes_1f603";
-                                                            $h6 = "Sangat Baik";
-                                                            break;
-
-                                                        case 3:
-                                                            $title = "Jika anda puas dengan pelayanan kami";
-                                                            // $icons = "sentiment_satisfied";
-                                                            $icons = "slightly-smiling-face_1f642";
-                                                            $h6 = "Baik";
-                                                            break;
-
-                                                        case 2:
-                                                            $title = "Jika anda tidak puas dengan pelayanan kami";
-                                                            // $icons = "sentiment_dissatisfied";
-                                                            $icons = "neutral-face_1f610";
-                                                            $h6 = "Kurang Baik";
-                                                            break;
-
-                                                        default:
-                                                            $title = "Jika anda sangat tidak puas dengan pelayanan kami";
-                                                            // $icons = "sentiment_very_dissatisfied";
-                                                            $icons = "disappointed-face_1f61e";
-                                                            $h6 = "Buruk";
-                                                            break;
-                                                    }
-                                                ?>
-                                                    <div class="col-sm-3">
-                                                        <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="<?= $title; ?>">
-                                                            <input type="radio" name="umum" value="<?= $row['bobot_nilai']; ?>">
-                                                            <div class="icon img-responsive">
-                                                                <!-- <i class="material-icons"><//echo icons></i> -->
-                                                                <img src="<?= base_url('assets/img/' . $icons . '.png'); ?>" width="100%">
-                                                            </div>
-                                                            <h6><?= $h6; ?></h6>
-                                                        </div>
-                                                    </div>
-                                                <?php
-                                                }
-                                                ?>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane" id="survey">
-                                        <h4 class="info-text">Berikan penilaian terhadap poin-poin dibawah ini. </h4>
-                                        <div class="row">
+                                </div>
+                                <div class="tab-pane" id="penilaianUmum">
+                                    <h4 class="info-text">Bagaimana penilaian Anda terhadap pelayanan kami secara umum? </h4>
+                                    <div class="row">
+                                        <div class="col-sm-12 col-sm-offset-3 form-group">
                                             <?php
-                                            foreach ($pertanyaan as $q) {
-                                                $jawaban = $this->survey_model->get_jawaban($q['id_pertanyaan'])->result_array();
+                                            foreach ($penilaian_umum as $row) {
+                                                switch ($row['bobot_nilai']) {
+                                                    case 4:
+                                                        $title = "Jika anda sangat puas dengan pelayanan kami";
+                                                        // $icons = "sentiment_very_satisfied";
+                                                        $icons = "grinning-face-with-big-eyes_1f603";
+                                                        $h6 = "Sangat Baik";
+                                                        break;
 
-                                                if (fmod($q['id_pertanyaan'], 2) == 0) {
-                                                    $divClass = "col-sm-5 col-sm-offset-1";
-                                                } else {
-                                                    $divClass = "col-sm-5";
+                                                    case 3:
+                                                        $title = "Jika anda puas dengan pelayanan kami";
+                                                        // $icons = "sentiment_satisfied";
+                                                        $icons = "slightly-smiling-face_1f642";
+                                                        $h6 = "Baik";
+                                                        break;
+
+                                                    case 2:
+                                                        $title = "Jika anda tidak puas dengan pelayanan kami";
+                                                        // $icons = "sentiment_dissatisfied";
+                                                        $icons = "neutral-face_1f610";
+                                                        $h6 = "Kurang Baik";
+                                                        break;
+
+                                                    default:
+                                                        $title = "Jika anda sangat tidak puas dengan pelayanan kami";
+                                                        // $icons = "sentiment_very_dissatisfied";
+                                                        $icons = "disappointed-face_1f61e";
+                                                        $h6 = "Buruk";
+                                                        break;
                                                 }
                                             ?>
-                                                <div class="<?= $divClass; ?>">
-                                                    <div>
-                                                        <div class="form-group label-floating">
-                                                            <h6><?= $q['n_pertanyaan']; ?></h6>
-                                                            <input type="hidden" name="pertanyaan_<?= $q['id_pertanyaan']; ?>" value="<?= $q['id_pertanyaan']; ?>">
-                                                            <?php
-                                                            foreach ($jawaban as $a) {
-                                                                echo "<div class='radio'><input type='radio' class='flat' name='jawaban_" . $q['id_pertanyaan'] . "' value='" . $a['bobot_nilai'] . "'>&nbsp;" . $a['n_jawaban'] . "</div>";
-                                                            }
-                                                            ?>
+                                                <div class="col-sm-3">
+                                                    <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="<?= $title; ?>">
+                                                        <input type="radio" name="umum" value="<?= $row['bobot_nilai']; ?>">
+                                                        <div class="icon img-responsive">
+                                                            <!-- <i class="material-icons"><//echo icons></i> -->
+                                                            <img src="<?= base_url('assets/img/' . $icons . '.png'); ?>" width="100%">
                                                         </div>
+                                                        <h6><?= $h6; ?></h6>
                                                     </div>
                                                 </div>
-                                            <?php } ?>
+                                            <?php
+                                            }
+                                            ?>
                                         </div>
                                     </div>
-                                    <div class="tab-pane" id="saran">
-                                        <div class="row">
-                                            <h4 class="info-text"> Berikan kami kritik/saran/masukan yang membangun. </h4>
-                                            <div class="col-sm-8 col-sm-offset-1">
-                                                <div class="form-group label-floating">
-                                                    <label class="control-label">Kritik/Saran/Masukan</label>
-                                                    <textarea class="form-control" placeholder="" rows="9" name="saran"></textarea>
+                                </div>
+                                <div class="tab-pane" id="survey">
+                                    <h4 class="info-text">Berikan penilaian terhadap poin-poin dibawah ini. </h4>
+                                    <div class="row">
+                                        <?php
+                                        foreach ($pertanyaan as $q) {
+                                            $jawaban = $this->survey_model->get_jawaban($q['id_pertanyaan'])->result_array();
+
+                                            if (fmod($q['id_pertanyaan'], 2) == 0) {
+                                                $divClass = "col-sm-5 col-sm-offset-1";
+                                            } else {
+                                                $divClass = "col-sm-5";
+                                            }
+                                        ?>
+                                            <div class="<?= $divClass; ?>">
+                                                <div>
+                                                    <div class="form-group label-floating">
+                                                        <h6><?= $q['n_pertanyaan']; ?></h6>
+                                                        <input type="hidden" name="pertanyaan_<?= $q['id_pertanyaan']; ?>" value="<?= $q['id_pertanyaan']; ?>">
+                                                        <?php
+                                                        foreach ($jawaban as $a) {
+                                                            echo "<div class='radio'><input type='radio' class='flat' name='jawaban_" . $q['id_pertanyaan'] . "' value='" . $a['bobot_nilai'] . "'>&nbsp;" . $a['n_jawaban'] . "</div>";
+                                                        }
+                                                        ?>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="col-sm-2">
-                                                <div class="form-group label-floating">
-                                                    <label class="control-label">Contoh</label>
-                                                    <p class="description">"Petugas pelayanan sangat ramah, ruang tunggu jg sangat comfy. Terus tingkatkan!!!"</p>
-                                                </div>
+                                        <?php } ?>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="saran">
+                                    <div class="row">
+                                        <h4 class="info-text"> Berikan kami kritik/saran/masukan yang membangun. </h4>
+                                        <div class="col-sm-8 col-sm-offset-1">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Kritik/Saran/Masukan</label>
+                                                <textarea class="form-control" placeholder="" rows="9" name="saran"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Contoh</label>
+                                                <p class="description">"Petugas pelayanan sangat ramah, ruang tunggu jg sangat comfy. Terus tingkatkan!!!"</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="wizard-footer">
-                                    <div class="pull-right">
-                                        <input type='button' class='btn btn-next btn-fill btn-primary btn-wd' name='next' value='Next' />
-                                        <input type='button' class='btn btn-finish btn-fill btn-primary btn-wd' name='finish' onclick="save()" id="btnSave" value='Selesai' />
-                                    </div>
-                                    <div class="pull-left">
-                                        <input type='button' class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Prev.' />
-                                    </div>
-                                    <div class="clearfix"></div>
+                            </div>
+                            <div class="wizard-footer">
+                                <div class="pull-right">
+                                    <input type='button' class='btn btn-next btn-fill btn-primary btn-wd' name='next' value='Next' />
+                                    <input type='button' class='btn btn-finish btn-fill btn-primary btn-wd' name='finish' onclick="save()" id="btnSave" value='Selesai' />
                                 </div>
+                                <div class="pull-left">
+                                    <input type='button' class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Prev.' />
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
                             </form>
                         </div>
                     </div> <!-- wizard container -->
@@ -241,10 +242,11 @@
                     <h4 class="modal-title" id="myModalLabel">Terima kasih</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Penilaian dan masukkan Anda sangat membantu kami untuk berubah menjadi lebih baik.</p>
+                    <h5>Terima kasih telah mengisi survey kepuasan masyarakat ini.
+                        Penilaian dan masukkan Anda sangat membantu kami untuk berubah menjadi lebih baik.</h5>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger btn-wd" data-dismiss="modal">Tutup</button>
+                    <button type="button" class="btn btn-danger btn-wd" data-dismiss="modal" onclick="window.location.reload()">Tutup</button>
                 </div>
             </div>
         </div>

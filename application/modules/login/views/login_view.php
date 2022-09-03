@@ -51,7 +51,7 @@
           <div>
             <div class="img-responsive text-center">
               <img src="<?= base_url('assets/img/logo_pemprov_kalbar.png'); ?>" alt="Logo Pemprov" width="30%">&nbsp;&nbsp;&nbsp;&nbsp;
-              <img src="<?= base_url('assets/img/ro_orgs.png'); ?>" alt="Logo Biro Organisasi" width="35%">&nbsp;&nbsp;&nbsp;&nbsp;
+              <img src="<?= base_url('assets/img/ro_orgs.png'); ?>" alt="Logo Biro Organisasi" width="30%">&nbsp;&nbsp;&nbsp;&nbsp;
               <img src="<?= base_url('assets/img/berakhlak.png'); ?>" alt="Berakhlak" width="50%">&nbsp;&nbsp;&nbsp;&nbsp;
               <img src="<?= base_url('assets/img/brand-kalbar.png'); ?>" alt="Brand Kalbar" width="25%"><br><br>
             </div>

@@ -1,14 +1,3 @@
-<!--
-=========================================================
-Material Dashboard - v2.1.2
-=========================================================
-
-Product Page: https://www.creative-tim.com/product/material-dashboard
-Copyright 2020 Creative Tim (https://www.creative-tim.com)
-Coded by Creative Tim
-
-=========================================================
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -116,12 +105,6 @@ The above copyright notice and this permission notice shall be included in all c
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
-          <div class="navbar-minimize">
-            <button id="minimizeSidebar" class="btn btn-round btn-white btn-fill btn-just-icon">
-              <i class="material-icons visible-on-sidebar-regular">more_vert</i>
-              <i class="material-icons visible-on-sidebar-mini">view_list</i>
-            </button>
-          </div>
           <div class="navbar-wrapper">
             <a class="navbar-brand" href="javascript:;">Hai <?php echo $uname . '. Anda berperan sebagai ' . $n_hak_akses . ' pada ' . $satker->n_satker ?>
             </a>
@@ -143,14 +126,6 @@ The above copyright notice and this permission notice shall be included in all c
               </div>
             </form>
             <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="javascript:;">
-                  <i class="material-icons">dashboard</i>
-                  <p class="d-lg-none d-md-block">
-                    Stats
-                  </p>
-                </a>
-              </li>
               <li class="nav-item dropdown">
                 <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="material-icons">notifications</i>
@@ -195,10 +170,7 @@ The above copyright notice and this permission notice shall be included in all c
         <div class="container-fluid">
           <div class="copyright float-right">
             <a href="http://biroorganisasi.kalbarprov.go.id">Biro Organisasi Setda Prov. Kalbar</a>
-            &copy;
-            <script>
-              document.write(new Date().getFullYear())
-            </script>
+            &copy; <?= date('Y'); ?>
           </div>
         </div>
       </footer>

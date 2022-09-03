@@ -12,6 +12,7 @@ class Survey extends CI_Controller
 		$this->load->model('satker_model');
 		$this->load->model('layanan_model');
 		$this->load->library('secure');
+		$this->load->helper('form');
 	}
 
 	function index()
@@ -32,6 +33,27 @@ class Survey extends CI_Controller
 		$data['penilaian_umum'] = $this->survey_model->get_jawaban($where)->result_array();
 		$this->load->view('v_survey2', $data);
 		//echo json_encode($data);
+	}
+
+	public function show_survey_opd()
+	{
+		$id_satker = $this->secure->decrypt_url($this->uri->segment(3));
+		$data['satker'] = $this->satker_model->get_satker_name_by_id($id_satker)->row_array();
+		$data['layanan'] = $this->layanan_model->get_layanan_by_id($id_satker);
+		$data['pendidikan'] = $this->survey_model->get_pendidikan()->result();
+		$data['pekerjaan'] = $this->survey_model->get_pekerjaan()->result();
+		$data['pertanyaan'] = $this->survey_model->get_pertanyaan()->result_array();
+		//get jawaban penilaian umum
+		$where = 1;
+		$data['penilaian_umum'] = $this->survey_model->get_jawaban($where)->result_array();
+		$this->load->view('v_survey_opd', $data);
+	}
+
+	public function cetak_qr()
+	{
+		$id_satker = $this->secure->decrypt_url($this->uri->segment(3));
+		$data['satker'] = $this->satker_model->get_satker_name_by_id($id_satker)->row_array();
+		$this->load->view('v_print_qr', $data);
 	}
 
 	function qna()
@@ -61,7 +83,7 @@ class Survey extends CI_Controller
 		//$response = array();
 		//$query = $this->survey_model->get_jawaban_penilaian()->result_array();
 		//echo var_dump(json_decode($query,true));
-		$this->load->view('v_survey2');
+		$this->load->view('v_survey_new');
 	}
 
 	public function ajax_add()

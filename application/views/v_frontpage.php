@@ -77,7 +77,7 @@
                             </div>
                           </div>
 
-                          <div id="test-layanan" style="display:none;">
+                          <div id="show-layanan" style="display:none;">
                             <div class="input-group pilih-jenis-layanan">
                               <span class="input-group-addon">
                                 <i class="material-icons">more_time</i>
@@ -152,7 +152,7 @@
       //   width: 'resolve'
       // });
       $('#pilih-opd').select2().change(function() {
-        $('#test-layanan').show('slow');
+        $('#show-layanan').show('slow');
         var ids = $(this).val();
         var csrfName = $('.txt_csrfname').attr('name');
         var csrfHash = $('.txt_csrfname').val();
